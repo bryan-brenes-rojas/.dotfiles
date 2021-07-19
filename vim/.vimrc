@@ -186,6 +186,14 @@ nnoremap <leader>p :FZF  <CR>
 " -------------------------------------------
 nnoremap <leader>s :Rg 
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case --glob '!{node_modules/*,.git/*}' " . <q-args>, 1, <bang>0)
+"
+" -------------------------------------------
+" git fugitive
+" -------------------------------------------
+nnoremap <leader>g :G<CR>
+nnoremap <leader>gc :Git commit<CR>
+nnoremap <leader>gf :diffget //2<CR>
+nnoremap <leader>gj :diffget //3<CR>
 
 " -------------------------------------------
 "  COC
