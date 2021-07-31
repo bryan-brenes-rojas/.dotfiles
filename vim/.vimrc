@@ -172,6 +172,32 @@ nnoremap <leader>w :set wrap! <CR>
 " Colorizer for css colors toggle
 nnoremap <leader>co :ColorToggle<CR>
 
+" Copiar hasta el final de linea
+nnoremap Y y$
+
+" Manteniendo centrado el cursor
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+" Undo breack points
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+
+" Agregar saltos relacionales a la lista de saltos
+nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
+nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
+
+" Moving text
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+nnoremap <leader>j :m .+1<CR>==
+nnoremap <leader>k :m .-2<CR>==
+inoremap <C-j> <esc>:m .+1<CR>==i
+inoremap <C-k> <esc>:m .-2<CR>==i
+
 " -------------------------------------------
 "  FZF
 " -------------------------------------------
