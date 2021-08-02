@@ -22,6 +22,8 @@ Plug 'dart-lang/dart-vim-plugin'
 Plug 'chrisbra/colorizer'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'vim-test/vim-test'
+Plug 'voldikss/vim-floaterm'
 call plug#end()
 
 colorscheme gruvbox
@@ -142,7 +144,7 @@ nnoremap <leader>b :buffers <CR>
 nnoremap <leader>re :reg <CR>
 
 nnoremap <leader>rv :source $MYVIMRC <enter>
-nnoremap <leader>t <c-w>b:belowright :terminal<CR>
+nnoremap <leader>te <c-w>b:belowright :terminal<CR>
 
 " Para redimensionar las ventanas
 " ventanas divididas horizontalmente
@@ -216,10 +218,21 @@ command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-hea
 " -------------------------------------------
 " git fugitive
 " -------------------------------------------
-nnoremap <leader>g :G<CR>
+nnoremap <leader>gs :G<CR>
 nnoremap <leader>gc :Git commit<CR>
 nnoremap <leader>gf :diffget //2<CR>
 nnoremap <leader>gj :diffget //3<CR>
+
+" -------------------------------------------
+" vim test
+" -------------------------------------------
+
+let test#strategy = "floaterm"
+nnoremap <silent> <leader>tn :TestNearest<CR>
+nnoremap <silent> <leader>tf :TestFile<CR>
+nnoremap <silent> <leader>ts :TestSuite<CR>
+nnoremap <silent> <leader>tl :TestLast<CR>
+nnoremap <silent> <leader>tv :TestVisit<CR>
 
 " -------------------------------------------
 "  COC
