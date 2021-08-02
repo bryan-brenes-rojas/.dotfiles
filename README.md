@@ -30,8 +30,20 @@ stow -D vim
 2. Recreate the file structure
 3. Copy the files to the subfolder
 4. If there is already a configuration in the computer remove the files so there is no conflicting files
-5. Once all files a copied execute:
+5. Once all files are copied execute:
 
 ```bash
 stow <subfolder-name>
 ```
+
+### Stowing vim
+
+1. stow vim
+
+2. Go to .config/coc/extensions, execute:
+
+```bash
+npm i --no-package-lock
+```
+
+3. Open vim and execute :PlugInstall
