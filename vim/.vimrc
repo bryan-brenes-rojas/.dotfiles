@@ -377,5 +377,14 @@ nmap <space>e :CocCommand explorer<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'CocCommand explorer' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 
+" Only organize import if filetype is .ts
+autocmd BufWritePre *.ts call OrganizeImportAndFormat()
+
+" Organize import (coc) then format (coc)
+function! OrganizeImportAndFormat()
+  :OR
+  :Format
+endfunction
+
 
 " -------------------------------------------
