@@ -132,6 +132,9 @@ set si
 
 set background=dark
 
+" Open new windows on the right and below
+set splitbelow splitright
+
 " spelling
 " set spell
 "set spelllang=en,es
@@ -140,7 +143,7 @@ set background=dark
 " Remaps
 " --------------------------------  
 
-nnoremap <leader>b :buffers <CR>
+nnoremap <leader>b :Buffers <CR>
 nnoremap <leader>re :reg <CR>
 
 nnoremap <leader>rv :source $MYVIMRC <enter>
@@ -150,10 +153,14 @@ nnoremap <leader>te <c-w>b:belowright :terminal<CR>
 " ventanas divididas horizontalmente
 nnoremap <silent> <leader>- :res -10<CR>
 nnoremap <silent> <leader>+ :res +10<CR>
+nnoremap <silent> <leader><down> :res -10<CR>
+nnoremap <silent> <leader><up> :res +10<CR>
 
 " ventanas divididas verticalmente
 nnoremap <silent> <leader>< :vertical resize -10<CR>
 nnoremap <silent> <leader>> :vertical resize +10<CR>
+nnoremap <silent> <leader><left> :vertical resize -10<CR>
+nnoremap <silent> <leader><right> :vertical resize +10<CR>
 
 " particionado de ventanas
 nnoremap <leader>v :vs 
@@ -199,6 +206,12 @@ nnoremap <leader>j :m .+1<CR>==
 nnoremap <leader>k :m .-2<CR>==
 inoremap <C-j> <esc>:m .+1<CR>==A
 inoremap <C-k> <esc>:m .-2<CR>==A
+
+" Open previous file in new tab
+nnoremap <leader>tp :tabnew #<CR>
+
+" Open current file in new tab
+nnoremap <leader>tc :tabnew %<CR>
 
 " -------------------------------------------
 "  FZF
