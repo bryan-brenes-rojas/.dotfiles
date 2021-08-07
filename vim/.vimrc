@@ -28,6 +28,7 @@ Plug 'vim-test/vim-test'
 Plug 'voldikss/vim-floaterm'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'airblade/vim-gitgutter'
+Plug 'skanehira/preview-markdown.vim'
 call plug#end()
 
 colorscheme gruvbox
@@ -260,6 +261,15 @@ nnoremap <silent> <leader>tf :TestFile<CR>
 nnoremap <silent> <leader>ts :TestSuite<CR>
 nnoremap <silent> <leader>tl :TestLast<CR>
 nnoremap <silent> <leader>tv :TestVisit<CR>
+
+" -------------------------------------------
+" vim test
+" -------------------------------------------
+
+" glow is a dependency that need to be installed
+" :PreviewMarkdown to open preview
+let g:preview_markdown_parser ='glow'
+let g:preview_markdown_auto_update = 1
 
 " -------------------------------------------
 "  COC
