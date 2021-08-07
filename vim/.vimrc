@@ -159,7 +159,6 @@ set signcolumn=auto
 nnoremap <leader>b :Buffers <CR>
 nnoremap <leader>re :reg <CR>
 
-nnoremap <leader>rv :source $MYVIMRC <enter>
 nnoremap <leader>te <c-w>b:belowright :terminal<CR>
 
 " Para redimensionar las ventanas
@@ -226,7 +225,7 @@ nnoremap <leader>tp :tabnew #<CR>
 " Open current file in new tab
 nnoremap <leader>tc :tabnew %<CR>
 
-nnoremap <leader>ev :tabnew $MYVIMRC<CR>
+nnoremap <leader>ov :tabnew $MYVIMRC<CR>
 
 " -------------------------------------------
 "  FZF
