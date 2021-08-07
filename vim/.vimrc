@@ -12,7 +12,9 @@ Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
 Plug 'scrooloose/nerdcommenter'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'easymotion/vim-easymotion'
+" Themes
 Plug 'morhetz/gruvbox'
+
 Plug 'ryanoasis/vim-devicons'
 " Para integrar fzf con vim
 Plug '~/.fzf'
@@ -29,6 +31,7 @@ Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 colorscheme gruvbox
+set background=dark
 
 " -------------------------------------------
 " Para mostrar la barra de estado (lightline)
@@ -135,8 +138,6 @@ set cindent
 
 "smart indent
 set si 
-
-set background=dark
 
 " Open new windows on the right and below
 set splitbelow splitright
