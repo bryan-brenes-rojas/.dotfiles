@@ -24,6 +24,8 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'vim-test/vim-test'
 Plug 'voldikss/vim-floaterm'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 colorscheme gruvbox
@@ -55,6 +57,10 @@ set noswapfile
 " -------------------------------------------
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
+
+" Add space after comment delimeter
+let NERDSpaceDelims=1
+
 " -------------------------------------------
 
 " -------------------------------------------
@@ -135,9 +141,14 @@ set background=dark
 " Open new windows on the right and below
 set splitbelow splitright
 
-" spelling
-" set spell
-"set spelllang=en,es
+" Start scrolling from some lines above
+set scrolloff=8
+
+" Display  vertical line at character 81
+set colorcolumn=81
+
+" Always show the sign column
+set signcolumn=auto
 
 " --------------------------------  
 " Remaps
@@ -213,6 +224,8 @@ nnoremap <leader>tp :tabnew #<CR>
 " Open current file in new tab
 nnoremap <leader>tc :tabnew %<CR>
 
+nnoremap <leader>ev :tabnew $MYVIMRC<CR>
+
 " -------------------------------------------
 "  FZF
 " -------------------------------------------
@@ -272,12 +285,12 @@ set shortmess+=c
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
-if has("patch-8.1.1564")
-   " Recently vim can merge signcolumn and number column into one
-   set signcolumn=number
-else
-   set signcolumn=yes
-endif
+"if has("patch-8.1.1564")
+   "" Recently vim can merge signcolumn and number column into one
+   "set signcolumn=number
+"else
+   "set signcolumn=yes
+"endif
 
 " Use tab for trigger completion with characters ahead and navigate.
 " " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -399,5 +412,22 @@ function! OrganizeImportAndFormat()
   :Format
 endfunction
 
+" Coc snippets
+" Use tab to expand snippet
+" Use <c-j> to jump to next placeholder
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
+
 
 " -------------------------------------------
+
