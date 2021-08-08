@@ -5,7 +5,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/nerdtree'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
@@ -29,6 +28,8 @@ Plug 'voldikss/vim-floaterm'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'airblade/vim-gitgutter'
 Plug 'skanehira/preview-markdown.vim'
+Plug 'mhinz/vim-startify'
+
 call plug#end()
 
 colorscheme gruvbox
@@ -67,26 +68,12 @@ let NERDSpaceDelims=1
 
 " -------------------------------------------
 
-" -------------------------------------------
-"  Nerdtree
-" -------------------------------------------
-" Para cerrar vim cuando solo quede abierto nerdtree
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" Abrir nerdTree cuando se abre vim con un directorio
-autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-" -------------------------------------------
-
 " ctrlp
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --     exclude-standard']
 
 " emmet config
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
-
-" nerdTree 
-map <c-n> :NERDTreeToggle <cr>
 
 set cursorline
 set cursorcolumn
@@ -269,6 +256,35 @@ nnoremap <silent> <leader>tv :TestVisit<CR>
 " :PreviewMarkdown to open preview
 let g:preview_markdown_parser ='glow'
 let g:preview_markdown_auto_update = 1
+
+" -------------------------------------------
+" Startify
+" -------------------------------------------
+
+" Directory where session are stored
+let g:startify_session_dir = '~/.vim/session'
+
+" Change to the root git directory
+let g:startify_change_to_vcs_root = 1
+
+" Save session before SLoad and before exit
+let g:startify_session_persistence = 1   " default 0
+
+" Delete empty buffers and quit
+let g:startify_enable_special = 0
+
+" Sections to be shown in the startup page
+let g:startify_lists = [
+      \ { 'type': 'files',     'header': ['   MRU']            },
+      \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+      \ { 'type': 'sessions',  'header': ['   Sessions']       },
+      \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+      \ ]
+
+let g:startify_bookmarks = [
+            \ { 'v': '~/.vimrc' },
+            \ { 'z': '~/.zshrc' },
+            \ ]
 
 " -------------------------------------------
 "  COC
