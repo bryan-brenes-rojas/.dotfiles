@@ -34,6 +34,7 @@ call plug#end()
 
 colorscheme gruvbox
 set background=dark
+highlight Normal ctermbg=none
 
 " -------------------------------------------
 " Para mostrar la barra de estado (lightline)
@@ -138,6 +139,11 @@ set colorcolumn=81
 
 " Always show the sign column
 set signcolumn=auto
+
+" enable mouse support for all modes
+set mouse=a
+" To enabled it for alacritty
+set ttymouse=sgr
 
 " --------------------------------  
 " Remaps
@@ -284,6 +290,7 @@ let g:startify_lists = [
 let g:startify_bookmarks = [
             \ { 'v': '~/.vimrc' },
             \ { 'z': '~/.zshrc' },
+            \ { 'a': '~/.alacritty.yml' },
             \ ]
 
 " -------------------------------------------
