@@ -145,6 +145,8 @@ set mouse=a
 " To enabled it for alacritty
 set ttymouse=sgr
 
+set clipboard=unnamedplus
+
 " --------------------------------  
 " Remaps
 " --------------------------------  
@@ -437,7 +439,10 @@ autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | end
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'CocCommand explorer' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 
 " Only organize import if filetype is .ts
-autocmd BufWritePre *.ts call OrganizeImportAndFormat()
+augroup BEFOREWRITE
+  autocmd!
+  autocmd BufWritePre *.ts call OrganizeImportAndFormat()
+augroup END
 
 " Organize import (coc) then format (coc)
 function! OrganizeImportAndFormat()
