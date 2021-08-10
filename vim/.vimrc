@@ -279,6 +279,8 @@ let g:startify_session_persistence = 1   " default 0
 " Delete empty buffers and quit
 let g:startify_enable_special = 0
 
+set sessionoptions=curdir,folds,help,tabpages,winpos
+
 " Sections to be shown in the startup page
 let g:startify_lists = [
       \ { 'type': 'files',     'header': ['   MRU']            },
