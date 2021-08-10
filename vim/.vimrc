@@ -287,11 +287,24 @@ let g:startify_lists = [
       \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
       \ ]
 
-let g:startify_bookmarks = [
-            \ { 'v': '~/.vimrc' },
-            \ { 'z': '~/.zshrc' },
-            \ { 'a': '~/.alacritty.yml' },
-            \ ]
+let s:os = system("echo -n $(uname)")
+if s:os == "Linux"
+  let g:startify_bookmarks = [
+              \ { 'v': '~/.vimrc' },
+              \ { 'z': '~/.zshrc' },
+              \ { 'a': '~/.alacritty.yml' },
+              \ ]
+else
+    let g:startify_bookmarks = [
+                \ { 'v': '~/.vimrc' },
+                \ { 'z': '~/.zshrc' },
+                \ { 'a': '~/.alacritty.yml' },
+                \ { 'f': '~/Documents/SamaRepos/sama-accounts' },
+                \ { 'b': '~/Documents/SamaRepos/sama-accounts-backend' },
+                \ { 'i': '~/Documents/SamaRepos/infra-rabbitburrow' },
+                \ { 's': '~/Documents/SamaRepos/sh3' },
+                \ ]
+endif
 
 " -------------------------------------------
 "  COC
