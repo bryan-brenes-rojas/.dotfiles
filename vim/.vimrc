@@ -301,6 +301,7 @@ else
                 \ { 'v': '~/.vimrc' },
                 \ { 'z': '~/.zshrc' },
                 \ { 'a': '~/.alacritty.yml' },
+                \ { 'o': '~/Documents/okr-notes/h2-2021.md' },
                 \ { 'f': '~/Documents/SamaRepos/sama-accounts' },
                 \ { 'b': '~/Documents/SamaRepos/sama-accounts-backend' },
                 \ { 'i': '~/Documents/SamaRepos/infra-rabbitburrow' },
