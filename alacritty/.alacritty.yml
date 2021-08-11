@@ -61,7 +61,7 @@ window:
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background and no title bar buttons
-  decorations: none
+  # decorations: none
 
   # Startup Mode (changes require restart)
   #
@@ -111,7 +111,7 @@ font:
   italic:
     family: MesloLGM Nerd Font
     style: Italic
-  size: 12
+  size: 14
 # Font configuration
 #font:
 # Normal (roman) font face
