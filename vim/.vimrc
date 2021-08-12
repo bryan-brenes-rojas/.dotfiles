@@ -138,7 +138,7 @@ set scrolloff=8
 set colorcolumn=81
 
 " Always show the sign column
-set signcolumn=auto
+set signcolumn=yes
 
 " enable mouse support for all modes
 set mouse=a
