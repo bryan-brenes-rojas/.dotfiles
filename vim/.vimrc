@@ -216,7 +216,7 @@ inoremap <C-k> <esc>:m .-2<CR>==A
 nnoremap <leader>tp :tabnew #<CR>
 
 " Open current file in new tab
-nnoremap <leader>tc :tabnew %<CR>
+nnoremap <leader>tc :q <CR> :tabnew #<CR>
 
 nnoremap <leader>ov :tabnew $MYVIMRC<CR>
 
