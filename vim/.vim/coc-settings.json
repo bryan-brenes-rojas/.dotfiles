@@ -11,5 +11,6 @@
     "yaml"
   ],
   "explorer.file.root.template": "[icon] [title] [git & 1][hidden & 1][root] [fullpath]",
-  "explorer.icon.enableNerdfont": true
+  "explorer.icon.enableNerdfont": true,
+  "diagnostic.checkCurrentLine": true
 }

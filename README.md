@@ -46,4 +46,12 @@ stow <subfolder-name>
 npm i --no-package-lock
 ```
 
+or, open vim and execute:
+
+```
+CocInstall coc-angular coc-css coc-emmet coc-explorer coc-html coc-json coc-prettier coc-sh coc-snippets coc-spell-checker coc-sql coc-tslint coc-tsserver
+```
+
+All new coc extensions must be added here
+
 3. Open vim and execute :PlugInstall
