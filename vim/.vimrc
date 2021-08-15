@@ -29,6 +29,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'airblade/vim-gitgutter'
 Plug 'skanehira/preview-markdown.vim'
 Plug 'mhinz/vim-startify'
+Plug 'unblevable/quick-scope'
 
 call plug#end()
 
@@ -308,6 +309,17 @@ else
                 \ { 's': '~/Documents/SamaRepos/sh3' },
                 \ ]
 endif
+
+" -------------------------------------------
+"  Quick scope
+" -------------------------------------------
+
+" Trigger a highlight in the appropriate direction when pressing these keys:
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+" Customize colors
+highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
+highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
 
 " -------------------------------------------
 "  COC
