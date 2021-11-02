@@ -30,6 +30,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'skanehira/preview-markdown.vim'
 Plug 'mhinz/vim-startify'
 Plug 'unblevable/quick-scope'
+Plug 'justinmk/vim-sneak'
+Plug 'romainl/vim-cool'
 
 call plug#end()
 
