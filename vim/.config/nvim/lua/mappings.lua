@@ -1,7 +1,7 @@
 local opts = {noremap = true, silent = true}
 vim.api.nvim_set_keymap('n','<leader>c', ':set cursorcolumn! cursorline!<CR>', opts)
 vim.api.nvim_set_keymap('n','<leader>re', ':reg<CR>', opts)
-vim.api.nvim_set_keymap('n','<leader>te', ':belowright :terminal<CR>', opts)
+vim.api.nvim_set_keymap('n','<leader>te', ':split | terminal<CR> <C-w>J :res 15<CR> i', opts)
 vim.api.nvim_set_keymap('n','<leader>tt', ':FloatermToggle<CR>', opts)
 
 -- horizontal resize
