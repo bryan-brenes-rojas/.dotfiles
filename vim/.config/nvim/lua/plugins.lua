@@ -1,4 +1,5 @@
 return require('packer').startup(function()
+	use 'wbthomason/packer.nvim'
   use 'dracula/vim'
   use 'morhetz/gruvbox'
   use 'mattn/emmet-vim'
@@ -21,7 +22,7 @@ return require('packer').startup(function()
   use 'unblevable/quick-scope'
   use 'mhinz/vim-startify'
   use 'justinmk/vim-sneak'
-  use 'romainl/vim-cool'
+	use 'romainl/vim-cool'
   use {
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
