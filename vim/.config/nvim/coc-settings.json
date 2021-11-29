@@ -1,0 +1,16 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "markdown",
+    "typescript",
+    "javascript",
+    "html",
+    "py",
+    "rb",
+    "json",
+    "yaml"
+  ],
+  "explorer.file.root.template": "[icon] [title] [git & 1][hidden & 1][root] [fullpath]",
+  "explorer.icon.enableNerdfont": true,
+  "diagnostic.checkCurrentLine": true
+}

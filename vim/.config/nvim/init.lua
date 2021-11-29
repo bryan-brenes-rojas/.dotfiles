@@ -1,0 +1,16 @@
+require('plugins')
+require('colorschemes')
+require('settings')
+require('mappings')
+
+-- Plugin configurations
+require('lightline_config')
+require('nerd_commenter_config')
+require('vim_test_config')
+require('floaterm_config')
+require('preview_markdown_config')
+require('quick_scope_config')
+require('telescope_config')
+require('vim_fugitive')
+require('emmet_config')
+vim.cmd('source ~/.config/nvim/lua/coc_config.vim')
