@@ -16,7 +16,7 @@ vim.api.nvim_set_keymap('n','<leader>>',':vertical resize +10<CR>',opts)
 vim.api.nvim_set_keymap('n', '<leader>v',':vs<CR>',opts)
 vim.api.nvim_set_keymap('n', '<leader>h',':sp<CR>',opts)
 
-vim.api.nvim_set_keymap('n','nh',':nohlsearch<CR>',opts)
+vim.api.nvim_set_keymap('n','rh',':nohlsearch<CR>',opts)
 
 vim.api.nvim_set_keymap('n','rv',':source $MYVIMRC<CR>',opts)
 
