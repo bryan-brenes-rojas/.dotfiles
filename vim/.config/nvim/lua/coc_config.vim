@@ -19,6 +19,7 @@ let g:coc_global_extensions = [
   \ 'coc-sql',
   \ 'coc-tslint',
   \ 'coc-tsserver',
+  \ 'coc-git',
 \ ]
 
 inoremap <silent><expr> <TAB>
