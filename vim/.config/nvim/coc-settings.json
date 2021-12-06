@@ -15,7 +15,7 @@
   "diagnostic.checkCurrentLine": true,
   "diagnostic.messageDelay": 500,
   "diagnostic.errorSign": "⨯",
-  "diagnostic.infoSign": "🛈",
-  "git.addGBlameToVirtualText": true,
-  "git.enableGutters": false
+  "diagnostic.infoSign": "!",
+  "diagnostic.enableMessage": "jump",
+  "diagnostic.virtualText": true
 }

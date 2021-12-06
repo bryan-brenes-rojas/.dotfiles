@@ -19,7 +19,6 @@ let g:coc_global_extensions = [
   \ 'coc-sql',
   \ 'coc-tslint',
   \ 'coc-tsserver',
-  \ 'coc-git',
 \ ]
 
 inoremap <silent><expr> <TAB>
@@ -47,6 +46,7 @@ endif
 
 nmap <silent> dp <Plug>(coc-diagnostic-prev)
 nmap <silent> dn <Plug>(coc-diagnostic-next)
+nnoremap <silent> di :call CocAction('diagnosticInfo')<CR>
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
