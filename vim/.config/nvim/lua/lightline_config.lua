@@ -6,10 +6,16 @@ let g:lightline = {
   \   'left': [ [ 'mode', 'paste' ],
   \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
   \ },
+	\ 'separator': { 'left': '', 'right': '' },
+	\ 'subseparator': { 'left': '', 'right': '' },
   \ 'component_function': {
-  \   'gitbranch': 'FugitiveHead',
+  \   'gitbranch': 'LightlineFugitive',
   \ }
   \ }
+	function! LightlineFugitive()
+		let branch = FugitiveHead()
+		return branch !=# '' ? ' '.branch : ''
+	endfunction
 ]])
 
 -- colorschemes: wombar, nightfox
