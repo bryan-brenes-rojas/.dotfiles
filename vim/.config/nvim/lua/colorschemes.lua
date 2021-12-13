@@ -38,3 +38,4 @@ nightfox.setup({
   colors = {}, -- Override default colors
   hlgroups = {}, -- Override highlight groups
 })
+vim.cmd('colorscheme nightfox')
