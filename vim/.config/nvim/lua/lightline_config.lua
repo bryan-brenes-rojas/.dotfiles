@@ -4,7 +4,8 @@ let g:lightline = {
   \ 'colorscheme': 'nightfox',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
-  \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+  \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+	\   'right': [ [ 'lineinfo' ], [ 'percent' ] ]
   \ },
 	\ 'separator': { 'left': '', 'right': '' },
 	\ 'subseparator': { 'left': '', 'right': '' },
