@@ -44,9 +44,9 @@ else
     inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
-nmap <silent> dp <Plug>(coc-diagnostic-prev)
-nmap <silent> dn <Plug>(coc-diagnostic-next)
-nnoremap <silent> di :call CocAction('diagnosticInfo')<CR>
+nmap <silent> <leader>dp <Plug>(coc-diagnostic-prev)
+nmap <silent> <leader>dn <Plug>(coc-diagnostic-next)
+nnoremap <silent> <leader>di :call CocAction('diagnosticInfo')<CR>
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)

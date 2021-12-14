@@ -63,3 +63,9 @@ vim.api.nvim_set_keymap('n','<leader>tc',':wq<CR>:tabnew #<CR>',opts)
 
 -- open init.lua in new tab
 vim.api.nvim_set_keymap('n', '<leader>ov', ':tabnew $MYVIMRC<CR>', opts)
+
+-- move throw the quickfix list
+vim.api.nvim_set_keymap('n', '<leader>qn', ':cnext <CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>qp', ':cprev <CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>qo', ':copen <CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>qc', ':cclose <CR>', opts)
