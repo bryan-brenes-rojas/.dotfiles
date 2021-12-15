@@ -40,7 +40,7 @@ height = 27
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0
-fixed-center = false
+fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -63,8 +63,8 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm i3
-modules-center = mpd
-modules-right = pulseaudio xkeyboard memory cpu wlan eth temperature date
+modules-center = mpd date
+modules-right = pulseaudio xkeyboard memory cpu wlan eth temperature
 
 ; tray-position = right
 tray-padding = 2
@@ -92,7 +92,7 @@ height = 30
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0
-fixed-center = false
+fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -115,9 +115,10 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 font-3 = Font Awesome:pixelsize=10;1
 
+; modules-left = bspwm
 modules-left = bspwm
-modules-center = mpd
-modules-right = pulseaudio xkeyboard memory cpu wlan eth temperature date
+modules-center = mpd date
+modules-right = pulseaudio xkeyboard memory cpu wlan eth temperature
 
 tray-position = right
 tray-padding = 2
@@ -332,11 +333,12 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date =
-date-alt = " %Y-%m-%d"
+date-alt =
+; date-alt = " %Y-%m-%d"
+date = "  %a %d %b %Y"
 
+time-alt = %H:%M
 time = %H:%M
-time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
