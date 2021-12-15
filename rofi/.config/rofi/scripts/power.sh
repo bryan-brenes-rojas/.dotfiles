@@ -1,4 +1,4 @@
-selection=$(echo -e "Shutdown\nReboot\nLock Screen\nQuit bspwm\nReload bspwm" | rofi -dmenu -i -l 5 -p "Control:")
+selection=$(echo -e "Shutdown\nReboot\nSuspend\nLock Screen\nQuit bspwm\nReload bspwm" | rofi -dmenu -i -l 5 -p "Control:")
 
 case $selection in
 	"Shutdown")
@@ -15,6 +15,9 @@ case $selection in
 		;;
 	"Quit bspwm")
 		bspc quit
+		;;
+	"Suspend")
+		systemctl suspend
 		;;
 esac
 
