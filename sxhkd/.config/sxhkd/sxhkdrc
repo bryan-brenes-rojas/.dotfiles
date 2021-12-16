@@ -96,7 +96,7 @@ XF86AudioRaiseVolume
 XF86AudioMute
 	amixer set Master toggle
 XF86AudioPlay
-	playerctl play-pause
+	playerctl -p spotify play-pause || playerctl play-pause
 XF86AudioNext
 	playerctl next
 XF86AudioPrev
