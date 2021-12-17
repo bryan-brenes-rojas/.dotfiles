@@ -118,7 +118,7 @@ font-3 = Font Awesome:pixelsize=10;1
 ; modules-left = bspwm
 modules-left = bspwm
 modules-center = mpd date
-modules-right = pulseaudio xkeyboard memory cpu wlan eth temperature
+modules-right = pulseaudio xkeyboard packages memory cpu wlan eth temperature
 
 tray-position = right
 tray-padding = 2
@@ -451,7 +451,7 @@ label-warn-foreground = ${colors.secondary}
 
 ramp-0 = 
 ; ramp-1 = 
-ramp-1 = 
+ramp-1 = " "
 ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
 
@@ -499,3 +499,20 @@ margin-top = 5
 margin-bottom = 5
 
 ; vim:ft=dosini
+[module/packages]
+type = custom/script
+
+exec = pacman -Qu | wc -l 2> /dev/null || echo ''
+
+; Will the script output continous content?
+; Default: false
+tail = false
+
+; Seconds to sleep between updates
+; Default: 5 (0 if `tail = true`)
+interval = 180
+
+format = <label>
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+; click-left = pacman -Qu | wc -l 2> /dev/null || echo '0'
