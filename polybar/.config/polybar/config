@@ -64,7 +64,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm i3
 modules-center = mpd date
-modules-right = pulseaudio xkeyboard memory cpu wlan eth temperature
+modules-right = pulseaudio xkeyboard packages memory cpu wlan eth temperature
 
 ; tray-position = right
 tray-padding = 2
