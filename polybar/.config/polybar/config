@@ -35,6 +35,7 @@ alert = #c94f6d
 
 [bar/secondary]
 monitor = ${env:MONITOR:DP-0}
+enable-ipc = true
 width = 100%
 height = 27
 ;offset-x = 1%
@@ -86,6 +87,7 @@ cursor-scroll = ns-resize
 
 [bar/main]
 ; monitor = DP-2
+enable-ipc = true
 monitor = ${env:MONITOR:DP-2}
 width = 100%
 height = 30
@@ -499,20 +501,13 @@ margin-top = 5
 margin-bottom = 5
 
 ; vim:ft=dosini
+
 [module/packages]
-type = custom/script
+type = custom/ipc
 
-exec = pacman -Qu | wc -l 2> /dev/null || echo ''
+hook-0 = ~/.config/polybar/scripts/checkPackages
+initial = 1
 
-; Will the script output continous content?
-; Default: false
-tail = false
-
-; Seconds to sleep between updates
-; Default: 5 (0 if `tail = true`)
-interval = 180
-
-format = <label>
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-; click-left = pacman -Qu | wc -l 2> /dev/null || echo '0'
+click-left = polybar-msg -p %pid% hook packages 1

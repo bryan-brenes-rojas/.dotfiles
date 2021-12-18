@@ -1,0 +1,8 @@
+packages=$(pacman -Qu | wc -l)
+
+if [ $packages == 0 ]
+then
+	echo ''
+else 
+	echo $packages
+fi
