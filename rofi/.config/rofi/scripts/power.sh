@@ -8,7 +8,7 @@ case $selection in
 		reboot
 		;;
 	"Lock Screen")
-		betterlockscreen -l dim
+		betterlockscreen -l dimblur
 		;;
 	"Reload bspwm")
 		bspc wm -r

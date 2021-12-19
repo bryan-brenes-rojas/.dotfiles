@@ -73,7 +73,7 @@ nmap <leader>f  <Plug>(coc-format-selected)
 augroup mygroup
   autocmd!
   " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  autocmd FileType typescript,json,typescriptreact,javascript setl formatexpr=CocAction('formatSelected')
   " Update signature help on jump placeholder.
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
@@ -100,7 +100,7 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 " Only organize import if filetype is .ts
 augroup BEFOREWRITE
   autocmd!
-  autocmd BufWritePre *.ts call OrganizeImportAndFormat()
+	autocmd BufWritePre *.ts,*.tsx,*.js,*.jsx call OrganizeImportAndFormat()
 augroup END
 
 " Organize import (coc) then format (coc)
