@@ -63,9 +63,10 @@ font-0 = JetBrainsMono Nerd Font:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
-modules-left = bspwm i3
+; modules-left = bspwm i3
+modules-left = bspwm
 modules-center = mpd date
-modules-right = pulseaudio xkeyboard packages memory cpu wlan eth temperature
+modules-right = xkeyboard packages memory cpu wlan eth temperature
 
 ; tray-position = right
 tray-padding = 2
@@ -120,7 +121,7 @@ font-3 = Font Awesome:pixelsize=10;1
 ; modules-left = bspwm
 modules-left = bspwm
 modules-center = mpd date
-modules-right = pulseaudio xkeyboard packages memory cpu wlan eth temperature
+modules-right = xkeyboard packages memory cpu wlan eth temperature
 
 tray-position = right
 tray-padding = 2
