@@ -64,8 +64,8 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
 ; modules-left = bspwm i3
-modules-left = bspwm
-modules-center = mpd date
+modules-left = date
+modules-center = mpd bspwm
 modules-right = xkeyboard packages memory cpu wlan eth temperature
 
 ; tray-position = right
@@ -119,8 +119,8 @@ font-2 = siji:pixelsize=10;1
 font-3 = Font Awesome:pixelsize=10;1
 
 ; modules-left = bspwm
-modules-left = bspwm
-modules-center = mpd date
+modules-left = date
+modules-center = mpd bspwm
 modules-right = xkeyboard packages memory cpu wlan eth temperature
 
 tray-position = right
@@ -343,7 +343,7 @@ date = "  %a %d %b %Y"
 time-alt = %H:%M
 time = %H:%M
 
-format-prefix = 
+; format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 ; format-underline = #0a6cf5
 
@@ -498,8 +498,8 @@ screenchange-reload = true
 ;pseudo-transparency = false
 
 [global/wm]
-margin-top = 5
-margin-bottom = 5
+margin-top = 0
+margin-bottom = 0
 
 ; vim:ft=dosini
 

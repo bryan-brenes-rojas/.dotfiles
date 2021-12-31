@@ -1,8 +1,9 @@
-packages=$(pacman -Qu | wc -l)
+pacman=$(pacman -Qu | wc -l)
+yay=$(yay -Qu | wc -l)
 
-if [ $packages == 0 ]
+if [ $pacman == 0 ] && [ $yay == 0 ]
 then
 	echo ''
 else 
-	echo $packages
+	echo $pacman '/' $yay
 fi
