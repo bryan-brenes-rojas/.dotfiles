@@ -29,7 +29,7 @@ bspc rule -a Screenkey manage=off
 picom &
 dunst &
 nm-applet &
-pa-applet &
+pgrep -x pa-applet > /dev/null || pa-applet &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 $HOME/.config/polybar/launch.sh
 # feh --bg-fill /run/media/Disco-1/Imágenes/Wallpapers/24577-4k-minimalist-wallpaper-3840x2160-158074280832820.jpg

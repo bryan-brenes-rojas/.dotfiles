@@ -66,7 +66,7 @@ font-2 = siji:pixelsize=10;1
 ; modules-left = bspwm i3
 modules-left = date
 modules-center = mpd bspwm
-modules-right = xkeyboard packages memory cpu wlan eth temperature
+modules-right = pulseaudio xkeyboard packages memory cpu wlan eth temperature
 
 ; tray-position = right
 tray-padding = 2
@@ -121,7 +121,7 @@ font-3 = Font Awesome:pixelsize=10;1
 ; modules-left = bspwm
 modules-left = date
 modules-center = mpd bspwm
-modules-right = xkeyboard packages memory cpu wlan eth temperature
+modules-right = pulseaudio xkeyboard packages memory cpu wlan eth temperature
 
 tray-position = right
 tray-padding = 2
@@ -352,8 +352,11 @@ label = %date% %time%
 [module/pulseaudio]
 type = internal/pulseaudio
 
+; format-volume-prefix = " "  
+format-volume-prefix = "Vol: "  
+format-volume-prefix-foreground = ${colors.foreground-alt}
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
+label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}
 
 ; label-muted = 🔇 muted
@@ -368,7 +371,7 @@ bar-volume-foreground-3 = #55aa55
 bar-volume-foreground-4 = #55aa55
 bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
+bar-volume-gradient = true
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
 bar-volume-fill = ─

@@ -10,10 +10,11 @@ super + Return
 super + @space
 	rofi -show drun
 
-# make sxhkd reload its configuration files:
+# reload sxhkd
 super + Escape
 	pkill -USR1 -x sxhkd && notify-send "sxhkd reloaded"
 
+# reload polybar
 super + ctrl + p
 	~/.config/polybar/launch.sh && notify-send "polybar reloaded"
 
@@ -21,11 +22,11 @@ super + ctrl + p
 # bspwm hotkeys
 #
 
-# quit/restart bspwm
+# restart bspwm
 super + ctrl + r
 	bspc wm -r && notify-send "bspwm reloaded"
 
-# close and kill
+# close or kill
 super + {_,shift + }x
 	bspc node -{c,k}
 
@@ -57,7 +58,7 @@ super + ctrl + {m,x,y,z}
 # focus/swap
 #
 
-# focus the node in the given direction
+# focus/move the node in the given direction
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
@@ -87,24 +88,36 @@ super + shift + Tab
 	# bspc node {older,newer} -f; \
 	# bspc wm -h on
 
-# focus or send to the given desktop
-super + {_,shift + }{1-9,0}
+# focus or move window to the given desktop, don't keep focus
+super + {_,ctrl + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
-super + ctrl + {0-9}
-	id=$(bspc query -N -n) && bspc node -d {0-9} && bspc node -f $id
+# move window to given desktop and keep focus
+super + shift + {1-9,0}
+	bspc node -d '^{1-9,10}' --follow
+	# id=$(bspc query -N -n) && bspc node -d {0-9} && bspc node -f $id
 
-#Volume Control
+# lower volume
 XF86AudioLowerVolume
 	amixer set Master 5%-
+
+# raise volume
 XF86AudioRaiseVolume
 	amixer set Master 5%+
+
+# mute
 XF86AudioMute
 	amixer set Master toggle
+
+# toggle play/pause
 XF86AudioPlay
 	playerctl -p spotify play-pause || playerctl play-pause
+
+# next song
 XF86AudioNext
 	playerctl next
+
+# previous song
 XF86AudioPrev
 	playerctl previous
 
@@ -134,15 +147,22 @@ super + alt + shift + space
 
 # expand a window by moving one of its side outward
 super + ctrl + {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+	bspc node -z {left -70 0,bottom 0 40,top 0 -40,right 70 0}
 
 # contract a window by moving one of its side inward
 super + ctrl + shift + {h,j,k,l}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+	bspc node -z {right -70 0,top 0 40,bottom 0 -40,left 70 0}
 
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+#
+# Rotate window tree
+#
+# rotate window tree
+super + shift + {a,d}
+	bspc node @/ -C {backward, forward}
 
 # lockscreen
 # alt + shift + x
@@ -153,7 +173,12 @@ super + {Left,Down,Up,Right}
 # 	shutdown
 # 	bspc quit
 # 	reboot
+# power menu
 super + p
 	~/.config/rofi/scripts/power.sh
+
+# show mappings
+super + slash
+	~/.config/rofi/scripts/bspwmMappings.sh
 
 # Open applications
