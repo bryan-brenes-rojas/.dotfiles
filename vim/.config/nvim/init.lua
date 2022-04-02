@@ -4,7 +4,8 @@ require('settings')
 require('mappings')
 
 -- Plugin configurations
-require('lightline_config')
+-- require('lightline_config')
+require('lualine_config')
 require('nerd_commenter_config')
 require('vim_test_config')
 require('floaterm_config')

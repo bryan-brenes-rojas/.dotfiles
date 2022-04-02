@@ -55,3 +55,18 @@ CocInstall coc-angular coc-css coc-emmet coc-explorer coc-html coc-json coc-pret
 All new coc extensions must be added here
 
 3. Open vim and execute :PlugInstall
+
+### Dependencies
+
+#### zsh
+
+- zsh-autosuggestions
+- oh-my-zsh
+- p10k
+- zsh
+
+#### neovim
+
+- node
+- lua
+- base-devel / build-essentials

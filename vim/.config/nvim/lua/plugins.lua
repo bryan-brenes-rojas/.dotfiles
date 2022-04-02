@@ -3,7 +3,7 @@ return require('packer').startup(function()
   use 'dracula/vim'
   use 'morhetz/gruvbox'
   use 'mattn/emmet-vim'
-  use 'itchyny/lightline.vim'
+  -- use 'itchyny/lightline.vim'
   use 'itchyny/vim-gitbranch'
   use 'tpope/vim-surround'
   use 'tpope/vim-fugitive'
@@ -30,5 +30,9 @@ return require('packer').startup(function()
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		run = ':TSUpdate'
+	}
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 	}
 end)

@@ -18,5 +18,7 @@
   "diagnostic.errorSign": "⨯",
   "diagnostic.infoSign": "!",
   "diagnostic.enableMessage": "jump",
-  "diagnostic.virtualText": true
+  "diagnostic.virtualText": true,
+  "solargraph.formatting": true,
+  "solargraph.diagnostics": true
 }

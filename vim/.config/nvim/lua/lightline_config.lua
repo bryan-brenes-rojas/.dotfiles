@@ -1,7 +1,7 @@
 vim.o.laststatus = 2
 vim.cmd([[
 let g:lightline = {
-  \ 'colorscheme': 'nightfox',
+  \ 'colorscheme': 'one',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
   \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
