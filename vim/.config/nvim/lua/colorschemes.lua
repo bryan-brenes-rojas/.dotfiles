@@ -32,9 +32,9 @@ nightfox.setup({
 			variables = "NONE", -- Style that is applied to variables: see `highlight-args` for options
 		},
 		inverse = {
-			match_paren = true, -- Enable/Disable inverse highlighting for match parens
-			visual = true, -- Enable/Disable inverse highlighting for visual selection
-			search = true, -- Enable/Disable inverse highlights for search highlights
+			match_paren = false, -- Enable/Disable inverse highlighting for match parens
+			visual = false, -- Enable/Disable inverse highlighting for visual selection
+			search = false, -- Enable/Disable inverse highlights for search highlights
 		},
 		colors = {}, -- Override default colors
 		hlgroups = {}, -- Override highlight groups
