@@ -39,4 +39,5 @@ return require('packer').startup(function()
 		'kdheepak/tabline.nvim',
 		requires = { { 'hoob3rt/lualine.nvim', opt=true }, {'kyazdani42/nvim-web-devicons', opt = true} }
 	}
+	use 'norcalli/nvim-colorizer.lua'
 end)
