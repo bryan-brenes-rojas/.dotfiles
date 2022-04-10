@@ -6,7 +6,11 @@ function MyTabLabel(n)
 	let path = bufname(buflist[winnr - 1])
 	let splits = split(path, '/')
 	if len(splits) > 0
-		return split(path, '/')[-1]
+		let label = split(path, '/')[-1]
+		if len(buflist) > 1
+			let label .= ' (' . len(buflist) . ')'
+		endif
+		return label
 	endif
 	return '[No Name]'
 endfunction
