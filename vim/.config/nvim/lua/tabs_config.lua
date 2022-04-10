@@ -20,7 +20,7 @@ function MyTabLine()
 	for i in range(tabpagenr('$'))
 		" select the highlighting
 		if i + 1 == tabpagenr()
-			let s .= '%#TabLineSel#'
+			let s .= '%#PmenuSel#'
 		else
 			let s .= '%#TabLine#'
 		endif
