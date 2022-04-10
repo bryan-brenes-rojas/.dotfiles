@@ -4,7 +4,11 @@ function MyTabLabel(n)
 	let buflist = tabpagebuflist(a:n)
 	let winnr = tabpagewinnr(a:n)
 	let path = bufname(buflist[winnr - 1])
-	return split(path, '/')[-1]
+	let splits = split(path, '/')
+	if len(splits) > 0
+		return split(path, '/')[-1]
+	endif
+	return '[No Name]'
 endfunction
 
 function MyTabLine()
