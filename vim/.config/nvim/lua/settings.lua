@@ -27,6 +27,7 @@ vim.wo.colorcolumn = '81'
 vim.opt.smartindent = true
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
+vim.opt.expandtab = true
 vim.opt.cindent = true
 
 -- global variables
