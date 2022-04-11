@@ -18,7 +18,7 @@ require('lualine').setup {
 				sections = { 'error' },
 			}
 		},
-    lualine_c = {'filename'},
+    lualine_c = {},
     lualine_x = {'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
@@ -31,6 +31,21 @@ require('lualine').setup {
     lualine_y = {},
     lualine_z = {}
   },
-  tabline = {},
+  tabline = {
+    lualine_a = {},
+    lualine_b = {
+      {
+        'tabs',
+        mode = 0,
+        tabs_color = {
+          active = 'lualine_a_normal',
+        }
+      }
+    },
+    lualine_c = {'filename'},
+    lualine_x = {},
+    lualine_y = {},
+    lualine_z = {}
+  },
   extensions = {}
 }
