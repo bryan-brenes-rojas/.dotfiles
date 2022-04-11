@@ -11,8 +11,8 @@ vim.opt.mouse = 'a'
 -- vim.cmd('set ttymouse=sgr')
 
 -- local to window
-vim.wo.cursorline = true
-vim.wo.cursorcolumn = true
+vim.wo.cursorline = false
+vim.wo.cursorcolumn = false
 vim.wo.foldmethod = 'indent'
 vim.wo.foldnestmax = 10
 vim.wo.foldenable = false
