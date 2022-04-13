@@ -2,4 +2,6 @@
 vim/.config/coc/list-*-history.json
 vim/.config/coc/commands
 vim/.config/coc/suggest.txt
+vim/.config/coc/extensions/db.json
+vim/.config/coc/extensions/package.json
 vim/.config/nvim/plugin/*
