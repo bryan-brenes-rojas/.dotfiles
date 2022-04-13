@@ -1,1 +1,5 @@
 **/node_modules/
+vim/.config/coc/list-*-history.json
+vim/.config/coc/commands
+vim/.config/coc/suggest.txt
+vim/.config/nvim/plugin/*

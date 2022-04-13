@@ -125,7 +125,7 @@ alias gs="git status"
 alias updateZSHConfig="source ~/.zshrc"
 alias openZSHConfig="vim ~/.zshrc"
 alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-alias cdh="cd /run/media/Disco-1"
+alias cdh="cd /run/media/bryan/Disco\ 1"
 
 export EDITOR='vim'
 
