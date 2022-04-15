@@ -11,6 +11,7 @@
     "coc-solargraph": ">=1.2.3",
     "coc-spell-checker": ">=1.2.0",
     "coc-sql": ">=0.9.0",
+    "coc-sumneko-lua": ">=0.0.25",
     "coc-tslint": ">=1.0.17",
     "coc-tsserver": ">=1.9.16"
   }
