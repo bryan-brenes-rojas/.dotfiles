@@ -40,7 +40,8 @@ ls.add_snippets("all", {
   }),
 })
 
-ls.add_snippets("typescript", {
+-- javascript
+ls.add_snippets({"typescript", "javascript", "javascriptreact"}, {
   s("function", {
     i(1, 'public'),
     t(' '),
