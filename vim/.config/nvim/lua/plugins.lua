@@ -1,5 +1,5 @@
 return require('packer').startup(function()
-	use 'wbthomason/packer.nvim'
+  use 'wbthomason/packer.nvim'
   use 'dracula/vim'
   use 'morhetz/gruvbox'
   use 'mattn/emmet-vim'
@@ -22,27 +22,31 @@ return require('packer').startup(function()
   use 'unblevable/quick-scope'
   use 'mhinz/vim-startify'
   use 'justinmk/vim-sneak'
-	use 'romainl/vim-cool'
+  use 'romainl/vim-cool'
   use {
     'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { { 'nvim-lua/plenary.nvim' } }
   }
-	use {
-		'nvim-treesitter/nvim-treesitter',
-		run = ':TSUpdate'
-	}
-	use {
-		'nvim-lualine/lualine.nvim',
-		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-	}
-	use {
-		'kdheepak/tabline.nvim',
-		requires = { { 'hoob3rt/lualine.nvim', opt=true }, {'kyazdani42/nvim-web-devicons', opt = true} }
-	}
-	use 'norcalli/nvim-colorizer.lua'
-	use {
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
+  use {
+    'kdheepak/tabline.nvim',
+    requires = { { 'hoob3rt/lualine.nvim', opt = true }, { 'kyazdani42/nvim-web-devicons', opt = true } }
+  }
+  use 'norcalli/nvim-colorizer.lua'
+  use {
     'kyazdani42/nvim-tree.lua',
     requires = { 'kyazdani42/nvim-web-devicons' },
-	}
-	use 'liuchengxu/vim-which-key'
+  }
+  use 'liuchengxu/vim-which-key'
+  use 'L3MON4D3/LuaSnip'
+  use 'hrsh7th/nvim-cmp'
+  use 'saadparwaiz1/cmp_luasnip'
+  use 'rafamadriz/friendly-snippets'
 end)
