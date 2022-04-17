@@ -45,8 +45,8 @@ return require('packer').startup(function()
     requires = { 'kyazdani42/nvim-web-devicons' },
   }
   use 'liuchengxu/vim-which-key'
-  use 'L3MON4D3/LuaSnip'
-  use 'hrsh7th/nvim-cmp'
-  use 'saadparwaiz1/cmp_luasnip'
+  -- use 'L3MON4D3/LuaSnip'
+  -- use 'hrsh7th/nvim-cmp'
+  -- use 'saadparwaiz1/cmp_luasnip'
   use 'rafamadriz/friendly-snippets'
 end)
