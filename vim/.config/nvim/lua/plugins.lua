@@ -49,4 +49,5 @@ return require('packer').startup(function()
   -- use 'hrsh7th/nvim-cmp'
   -- use 'saadparwaiz1/cmp_luasnip'
   use 'rafamadriz/friendly-snippets'
+  use 'fannheyward/telescope-coc.nvim'
 end)
