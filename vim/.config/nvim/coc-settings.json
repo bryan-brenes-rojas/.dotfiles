@@ -23,5 +23,9 @@
   "solargraph.formatting": true,
   "solargraph.diagnostics": true,
   "sumneko-lua.enableNvimLuaDev": true,
-  "Lua.telemetry.enable": false
+  "Lua.telemetry.enable": false,
+  "outline.keepWindow": true,
+  "outline.splitCommand": "botright 80vs",
+  "outline.expandLevel": 1,
+  "outline.sortBy": "position"
 }
