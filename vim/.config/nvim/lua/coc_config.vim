@@ -22,6 +22,7 @@ let g:coc_global_extensions = [
   \ 'coc-solargraph',
   \ 'coc-sumneko-lua',
   \ 'coc-pyright',
+  \ 'coc-rust-analyzer',
 \ ]
 
 inoremap <silent><expr> <TAB>
