@@ -6,7 +6,7 @@ require('lualine').setup {
     section_separators = { left = '', right = ''},
     disabled_filetypes = {},
     always_divide_middle = true,
-    globalstatus = false,
+    globalstatus = true,
   },
   sections = {
     lualine_a = {'mode'},
@@ -18,7 +18,7 @@ require('lualine').setup {
 				sections = { 'error' },
 			}
 		},
-    lualine_c = {},
+    lualine_c = {'filename'},
     lualine_x = {'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
@@ -42,7 +42,7 @@ require('lualine').setup {
         }
       }
     },
-    lualine_c = {'filename'},
+    lualine_c = {},
     lualine_x = {},
     lualine_y = {},
     lualine_z = {}
