@@ -49,5 +49,7 @@ return require('packer').startup(function()
   -- use 'hrsh7th/nvim-cmp'
   -- use 'saadparwaiz1/cmp_luasnip'
   use 'rafamadriz/friendly-snippets'
+  use 'rcarriga/nvim-notify'
   use 'fannheyward/telescope-coc.nvim'
+  use "lukas-reineke/indent-blankline.nvim"
 end)
