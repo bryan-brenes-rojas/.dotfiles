@@ -5,6 +5,33 @@ end
 
 local luasnip = require("luasnip")
 local cmp = require("cmp")
+local kind_icons = {
+  Class = " ",
+  Color = " ",
+  Constant = "ﲀ ",
+  Constructor = " ",
+  Enum = "練",
+  EnumMember = " ",
+  Event = " ",
+  Field = " ",
+  File = "",
+  Folder = " ",
+  Function = " ",
+  Interface = "ﰮ ",
+  Keyword = " ",
+  Method = " ",
+  Module = " ",
+  Operator = "",
+  Property = " ",
+  Reference = " ",
+  Snippet = " ",
+  Struct = " ",
+  Text = " ",
+  TypeParameter = " ",
+  Unit = "塞",
+  Value = " ",
+  Variable = " ",
+}
 
 cmp.setup({
   snippet = {
@@ -25,6 +52,17 @@ cmp.setup({
         fallback()
       end
     end, { "i", "s" }),
+    ["<Down>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      elseif has_words_before() then
+        cmp.complete()
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
 
     ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
@@ -35,8 +73,28 @@ cmp.setup({
         fallback()
       end
     end, { "i", "s" }),
+    ["<Up>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
   },
   sources = {
+    { name = 'nvim_lsp' },
+    { name = 'nvim_lua' },
+    { name = 'buffer' },
+    { name = 'path' },
     { name = 'luasnip' },
   },
+  formatting = {
+    format = function(entry, vim_item)
+      -- Kind icons
+      vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+      return vim_item
+    end
+  }
 })

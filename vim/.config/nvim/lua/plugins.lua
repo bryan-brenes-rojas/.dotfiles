@@ -13,10 +13,10 @@ return require('packer').startup(function()
   use 'vim-test/vim-test'
   use 'voldikss/vim-floaterm'
   use 'airblade/vim-gitgutter'
-  use {
-    'neoclide/coc.nvim',
-    branch = 'release'
-  }
+  -- use {
+    -- 'neoclide/coc.nvim',
+    -- branch = 'release'
+  -- }
   use 'EdenEast/nightfox.nvim'
   use 'skanehira/preview-markdown.vim'
   use 'unblevable/quick-scope'
@@ -45,11 +45,20 @@ return require('packer').startup(function()
     requires = { 'kyazdani42/nvim-web-devicons' },
   }
   use 'liuchengxu/vim-which-key'
-  -- use 'L3MON4D3/LuaSnip'
-  -- use 'hrsh7th/nvim-cmp'
-  -- use 'saadparwaiz1/cmp_luasnip'
+  -- cmp
+  use 'L3MON4D3/LuaSnip'
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-nvim-lua'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'saadparwaiz1/cmp_luasnip'
   use 'rafamadriz/friendly-snippets'
   use 'rcarriga/nvim-notify'
-  use 'fannheyward/telescope-coc.nvim'
+  -- use 'fannheyward/telescope-coc.nvim'
   use "lukas-reineke/indent-blankline.nvim"
+
+  -- lsp
+  use 'neovim/nvim-lspconfig'
+  use 'williamboman/nvim-lsp-installer'
 end)

@@ -5,4 +5,4 @@ vim.api.nvim_set_keymap('n', '<leader>p',":lua require'telescope.builtin'.find_f
 vim.api.nvim_set_keymap('n', '<leader>b',":lua require'telescope.builtin'.buffers()<CR>", options)
 vim.api.nvim_set_keymap('n', '<leader>s',":lua require'telescope.builtin'.live_grep()<CR>", options)
 
-require('telescope').load_extension('coc')
+-- require('telescope').load_extension('coc')
