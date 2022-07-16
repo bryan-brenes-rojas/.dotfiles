@@ -7,3 +7,4 @@ vim/.config/coc/suggest.txt
 vim/.config/coc/extensions/db.json
 vim/.config/coc/extensions/package.json
 vim/.config/nvim/plugin/*
+vim/.config/coc/list-snippets-history.json

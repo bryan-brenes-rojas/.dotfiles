@@ -1,0 +1,79 @@
+# A valid snippet should starts with:
+#
+#		snippet trigger_word [ "description" [ options ] ]
+#
+# and end with:
+#
+#		endsnippet
+#
+# Snippet options:
+#
+#		b - Beginning of line.
+#		i - In-word expansion.
+#		w - Word boundary.
+#		r - Regular expression
+#		e - Custom context snippet
+#		A - Snippet will be triggered automatically, when condition matches.
+#
+# Basic example:
+#
+#		snippet emitter "emitter properties" b
+#		private readonly ${1} = new Emitter<$2>()
+#		public readonly ${1/^_(.*)/$1/}: Event<$2> = this.$1.event
+#		endsnippet
+#
+# Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
+
+snippet method "Generic method"
+${1:private} ${2:name}(${3:args}): ${4:void} {
+	$0
+}
+endsnippet
+
+# Tests
+snippet describe "Test describe"
+describe('${1:description}', () => {
+  $0
+});
+endsnippet
+
+snippet it "test"
+it('${1:description}', ${2:async} () => {
+  $0
+});
+endsnippet
+
+snippet itf "test with fakeAsync"
+it('${1:description}', fakeAsync(${2:async} () => {
+  $0
+}));
+endsnippet
+
+snippet beforeEach "before each test"
+beforeEach(${2:async} () => {
+  $0
+});
+endsnippet
+
+snippet afterEach "after each test"
+afterEach(${2:async} () => {
+  $0
+});
+endsnippet
+
+snippet descForEach "Describe with for each"
+${1:array}.forEach((${2:iterator}) => {
+	describe('${3:description}', () => {
+		$0
+	});
+});
+endsnippet
+
+snippet componentAngular "Angular component"
+@Component({
+	selector: '${1:app-test}',
+	templateUrl: '${2:url}',
+	styleUrls: ['${3:url}'],
+})
+export class ${4:className} {$5}
+endsnippet

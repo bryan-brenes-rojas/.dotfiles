@@ -23,6 +23,7 @@ let g:coc_global_extensions = [
   \ 'coc-sumneko-lua',
   \ 'coc-pyright',
   \ 'coc-rust-analyzer',
+  \ 'coc-snippets',
 \ ]
 
 inoremap <silent><expr> <TAB>
@@ -113,3 +114,6 @@ function! OrganizeImportAndFormat()
   :OR
   :Format
 endfunction
+
+" snippets
+let g:coc_snippet_next = '<tab>'
