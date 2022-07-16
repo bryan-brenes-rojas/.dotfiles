@@ -3,14 +3,16 @@
 
 vim.diagnostic.config({
   virtual_text = {
-    source = "if_many",  -- Or "if_many"
+    source = "if_many", -- Or "if_many"
     prefix = "▎",
     severity_sort = true,
   },
   float = {
-    source = "always",  -- Or "if_many"
+    source = "always", -- Or "if_many"
   },
 })
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
+
 local opts = { noremap = true, silent = true }
 -- vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '<leader>dp', vim.diagnostic.goto_prev, opts)
@@ -48,13 +50,19 @@ local lsp_flags = {
   -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,
 }
+
+-- Setup lspconfig.
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
 require('lspconfig')['pyright'].setup {
   on_attach = on_attach,
   flags = lsp_flags,
+  capabilities = capabilities,
 }
 require('lspconfig')['sumneko_lua'].setup {
   on_attach = on_attach,
   flags = lsp_flags,
+  capabilities = capabilities,
   settings = {
     Lua = {
       diagnostics = {
@@ -63,12 +71,25 @@ require('lspconfig')['sumneko_lua'].setup {
     },
   },
 }
- -- Setup lspconfig.
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local function organize_imports()
+  local params = {
+    command = "_typescript.organizeImports",
+    arguments = { vim.api.nvim_buf_get_name(0) },
+    title = ""
+  }
+  vim.lsp.buf.execute_command(params)
+end
+
 require('lspconfig')['tsserver'].setup {
   on_attach = on_attach,
   flags = lsp_flags,
-  capabilities = capabilities
+  capabilities = capabilities,
+  commands = {
+    OrganizeImports = {
+      organize_imports,
+      description = "Organize Imports"
+    }
+  }
 }
 require('lspconfig')['rust_analyzer'].setup {
   on_attach = on_attach,

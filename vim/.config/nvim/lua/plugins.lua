@@ -14,8 +14,8 @@ return require('packer').startup(function()
   use 'voldikss/vim-floaterm'
   use 'airblade/vim-gitgutter'
   -- use {
-    -- 'neoclide/coc.nvim',
-    -- branch = 'release'
+  -- 'neoclide/coc.nvim',
+  -- branch = 'release'
   -- }
   use 'EdenEast/nightfox.nvim'
   use 'skanehira/preview-markdown.vim'
