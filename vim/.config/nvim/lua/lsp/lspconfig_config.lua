@@ -54,85 +54,62 @@ local lsp_flags = {
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-require('lspconfig')['pyright'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
-  capabilities = capabilities,
+local servers = {
+  'pyright',
+  'sumneko_lua',
+  'tsserver',
+  'rust_analyzer',
+  'jsonls',
+  'angularls',
+  'cssls',
+  'html',
+  'sqlls',
+  'solargraph',
+  'bashls',
+  'emmet_ls',
+  'marksman',
 }
-require('lspconfig')['sumneko_lua'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
-  capabilities = capabilities,
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { 'vim', 'use' },
-      },
-    },
-  },
-}
-local function organize_imports()
-  local params = {
-    command = "_typescript.organizeImports",
-    arguments = { vim.api.nvim_buf_get_name(0) },
-    title = ""
-  }
-  vim.lsp.buf.execute_command(params)
-end
 
-require('lspconfig')['tsserver'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
-  capabilities = capabilities,
-  commands = {
-    OrganizeImports = {
-      organize_imports,
-      description = "Organize Imports"
+for _, server in ipairs(servers) do
+  if (server == 'sumneko_lua') then
+    require('lspconfig')['sumneko_lua'].setup {
+      on_attach = on_attach,
+      flags = lsp_flags,
+      capabilities = capabilities,
+      settings = {
+        Lua = {
+          diagnostics = {
+            globals = { 'vim', 'use' },
+          },
+        },
+      },
     }
-  }
-}
-require('lspconfig')['rust_analyzer'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
-  capabilities = capabilities
-}
-require('lspconfig')['jsonls'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
-  capabilities = capabilities
-}
-require('lspconfig')['angularls'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
-  capabilities = capabilities
-}
-require('lspconfig')['cssls'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
-  capabilities = capabilities
-}
-require('lspconfig')['html'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
-  capabilities = capabilities
-}
-require('lspconfig')['sqlls'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
-  capabilities = capabilities
-}
-require('lspconfig')['solargraph'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
-  capabilities = capabilities
-}
-require('lspconfig')['bashls'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
-  capabilities = capabilities
-}
-require('lspconfig')['emmet_ls'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
-  capabilities = capabilities
-}
+  elseif (server == 'tsserver') then
+    local function organize_imports()
+      local params = {
+        command = "_typescript.organizeImports",
+        arguments = { vim.api.nvim_buf_get_name(0) },
+        title = ""
+      }
+      vim.lsp.buf.execute_command(params)
+    end
+
+    require('lspconfig')['tsserver'].setup {
+      on_attach = on_attach,
+      flags = lsp_flags,
+      capabilities = capabilities,
+      commands = {
+        OrganizeImports = {
+          organize_imports,
+          description = "Organize Imports"
+        }
+      }
+    }
+  else
+    require('lspconfig')[server].setup {
+      on_attach = on_attach,
+      flags = lsp_flags,
+      capabilities = capabilities,
+    }
+  end
+end
