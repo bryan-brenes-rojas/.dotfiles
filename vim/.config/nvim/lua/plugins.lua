@@ -1,7 +1,13 @@
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
+
+  -- themes
   use 'dracula/vim'
   use 'morhetz/gruvbox'
+  use 'navarasu/onedark.nvim'
+  use 'EdenEast/nightfox.nvim'
+  use 'drewtempelmeyer/palenight.vim'
+
   use 'mattn/emmet-vim'
   -- use 'itchyny/lightline.vim'
   use 'itchyny/vim-gitbranch'
@@ -13,7 +19,6 @@ return require('packer').startup(function()
   use 'vim-test/vim-test'
   use 'voldikss/vim-floaterm'
   use 'airblade/vim-gitgutter'
-  use 'EdenEast/nightfox.nvim'
   use 'skanehira/preview-markdown.vim'
   use 'unblevable/quick-scope'
   use 'mhinz/vim-startify'

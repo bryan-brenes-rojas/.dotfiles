@@ -1,20 +1,3 @@
--- require('nightfox').load('nightfox')
--- gruvbox config
--- vim.cmd('colorscheme gruvbox')
--- vim.cmd('set background=dark')
--- vim.cmd('highlight Normal ctermbg=none')
--- gruvbox config end
-
--- Dracula colorscheme
-vim.cmd([[
-augroup DraculaOverrides
-    autocmd!
-    autocmd ColorScheme dracula highlight DraculaBoundary guibg=none
-    autocmd ColorScheme dracula highlight DraculaDiffDelete ctermbg=none guibg=none
-    autocmd ColorScheme dracula highlight DraculaComment cterm=italic gui=italic
-augroup end
-]])
-
 -- Nightfox config
 local nightfox = require('nightfox')
 
@@ -40,4 +23,4 @@ nightfox.setup({
 		hlgroups = {}, -- Override highlight groups
 	},
 })
-vim.cmd('colorscheme nightfox')
+
