@@ -19,10 +19,16 @@ require('tabline_config')
 -- require('tabs_config')
 require('colorizer_config')
 require('git_gutter_config')
-require('luasnip_config')
-require('nvim_cmp_config')
-require('nvim_tree_config')
 require('blankline_config')
-require('lsp/nvim_lsp_installer_config')
-require('lsp/lspconfig_config')
--- vim.cmd('source ~/.config/nvim/lua/coc_config.vim')
+-- require('nvim_tree_config')
+
+-- completion for native lsp (not using coc)
+-- require('luasnip_config')
+-- require('nvim_cmp_config')
+
+-- native lsp configuration
+-- require('lsp/nvim_lsp_installer_config')
+-- require('lsp/lspconfig_config')
+
+-- coc configurations
+vim.cmd('source ~/.config/nvim/lua/coc_config.vim')
