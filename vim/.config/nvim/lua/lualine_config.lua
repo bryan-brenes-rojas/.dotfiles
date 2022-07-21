@@ -11,7 +11,6 @@ require('lualine').setup {
   sections = {
     lualine_a = { 'mode' },
     lualine_b = {
-      'branch',
       'diff',
       {
         'diagnostics',
@@ -44,7 +43,7 @@ require('lualine').setup {
     },
     lualine_c = {},
     lualine_x = {},
-    lualine_y = {},
+    lualine_y = { 'branch' },
     lualine_z = {}
   },
   extensions = {}
