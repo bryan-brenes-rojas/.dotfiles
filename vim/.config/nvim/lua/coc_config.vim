@@ -2,7 +2,7 @@ let g:coc_disable_startup_warning = 1
 set hidden
 set nobackup
 set nowritebackup
-set cmdheight=2
+set cmdheight=1
 set updatetime=300
 set shortmess+=c
 
@@ -52,11 +52,13 @@ endif
 nmap <silent> <leader>dp <Plug>(coc-diagnostic-prev)
 nmap <silent> <leader>dn <Plug>(coc-diagnostic-next)
 nnoremap <silent> <leader>di :call CocAction('diagnosticInfo')<CR>
+nnoremap <silent> <leader>dl :Telescope coc diagnostics<CR>
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+" nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gr :Telescope coc references<CR>
 
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 nnoremap <silent> <leader>o :CocOutline<CR>
@@ -85,7 +87,8 @@ augroup mygroup
 augroup end
 
 " Remap keys for applying codeAction to the current buffer.
-nmap <leader>.  <Plug>(coc-codeaction)
+" nmap <leader>.  <Plug>(coc-codeaction)
+nmap <leader>.  :Telescope coc file_code_actions<CR>
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
 

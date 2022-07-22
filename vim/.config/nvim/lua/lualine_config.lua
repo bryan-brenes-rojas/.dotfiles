@@ -1,3 +1,12 @@
+local fileNameConfig = {
+  'filename',
+  symbols = {
+    modified = ' ●', -- Text to show when the file is modified.
+    readonly = ' ', -- Text to show when the file is non-modifiable or readonly.
+    unnamed = '[No Name]', -- Text to show for unnamed buffers.
+  }
+}
+
 require('lualine').setup {
   options = {
     icons_enabled = true,
@@ -17,7 +26,7 @@ require('lualine').setup {
         sections = { 'error' },
       }
     },
-    lualine_c = { 'filename' },
+    lualine_c = { fileNameConfig },
     lualine_x = { 'filetype' },
     lualine_y = { 'progress' },
     lualine_z = { 'location' }
@@ -25,7 +34,7 @@ require('lualine').setup {
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
-    lualine_c = { 'filename' },
+    lualine_c = { fileNameConfig },
     lualine_x = { 'location' },
     lualine_y = {},
     lualine_z = {}
