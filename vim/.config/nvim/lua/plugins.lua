@@ -69,4 +69,5 @@ return require('packer').startup(function()
     branch = 'release'
   }
   use 'fannheyward/telescope-coc.nvim'
+  use { "akinsho/toggleterm.nvim", tag = 'v2.*' }
 end)

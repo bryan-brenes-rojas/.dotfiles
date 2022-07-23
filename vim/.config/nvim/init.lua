@@ -20,6 +20,7 @@ require('tabline_config')
 require('colorizer_config')
 require('git_gutter_config')
 require('blankline_config')
+require('toggleterm_config')
 -- require('nvim_tree_config')
 
 -- completion for native lsp (not using coc)
