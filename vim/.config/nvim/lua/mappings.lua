@@ -1,6 +1,6 @@
 local opts = {noremap = true, silent = true}
 vim.api.nvim_set_keymap('n','<leader>c', ':set cursorcolumn! cursorline!<CR>', opts)
-vim.api.nvim_set_keymap('n','<leader>re', ':reg<CR>', opts)
+vim.api.nvim_set_keymap('n','<leader>re', ':Telescope registers<CR>', opts)
 vim.api.nvim_set_keymap('n','<leader>te', ':split | terminal<CR> <C-w>J :res 10<CR> i', opts)
 vim.api.nvim_set_keymap('n','<leader>tt', ':FloatermToggle<CR>', opts)
 
@@ -57,9 +57,6 @@ vim.api.nvim_set_keymap('i','<C-k>','<esc>:m .-2<CR>==A', opts)
 
 -- open previous file in new tab
 vim.api.nvim_set_keymap('n', '<leader>tp',':tabnew #<CR>', opts)
-
--- open current file in new tab
-vim.api.nvim_set_keymap('n','<leader>tc',':wq<CR>:tabnew #<CR>',opts)
 
 -- open init.lua in new tab
 vim.api.nvim_set_keymap('n', '<leader>ov', ':tabnew $MYVIMRC<CR>', opts)

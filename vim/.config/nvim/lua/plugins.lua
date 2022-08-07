@@ -70,4 +70,5 @@ return require('packer').startup(function()
   }
   use 'fannheyward/telescope-coc.nvim'
   use { "akinsho/toggleterm.nvim", tag = 'v2.*' }
+  use 'folke/which-key.nvim'
 end)
