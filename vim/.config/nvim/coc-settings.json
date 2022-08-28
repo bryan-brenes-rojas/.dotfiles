@@ -29,6 +29,7 @@
   "diagnostic.warningSign": "",
   "diagnostic.enableMessage": "jump",
   "diagnostic.virtualText": true,
+  "diagnostic.virtualTextPrefix": "  ",
   "solargraph.formatting": true,
   "solargraph.diagnostics": true,
   "sumneko-lua.enableNvimLuaDev": true,
