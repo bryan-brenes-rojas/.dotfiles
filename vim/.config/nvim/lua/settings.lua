@@ -8,6 +8,8 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.scrolloff = 8
 vim.opt.mouse = 'a'
+-- Also copy to clipboard when yanking text
+vim.opt.clipboard:prepend {'unnamedplus'}
 -- vim.cmd('set ttymouse=sgr')
 
 -- local to window
