@@ -5,6 +5,14 @@ vim.api.nvim_set_keymap('n', '<leader>b', ":lua require'telescope.builtin'.buffe
 vim.api.nvim_set_keymap('n', '<leader>s', ":lua require'telescope.builtin'.live_grep()<CR>", options)
 
 require('telescope').setup({
+  defaults = {
+    layout_config = {
+      horizontal = {
+        width = 0.9,
+        preview_width = 0.4,
+      }
+    }
+  },
   pickers = {
     find_files = {
       prompt_prefix = ' '

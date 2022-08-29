@@ -16,10 +16,11 @@ require('toggleterm').setup({
     winblend = 0,
     width = 180,
     height = 30,
-    highlights = {
-      border = "Normal",
-      background = "Normal",
-    }
+  },
+  highlights = {
+    FloatBorder = {
+      guifg = "#48b0bd",
+    },
   }
 })
 
