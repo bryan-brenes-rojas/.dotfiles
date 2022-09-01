@@ -85,7 +85,8 @@ augroup end
 
 " Remap keys for applying codeAction to the current buffer.
 " nmap <leader>.  <Plug>(coc-codeaction)
-nmap <leader>.  :Telescope coc file_code_actions<CR>
+nmap <silent> <leader>.  :Telescope coc code_actions<CR>
+nmap <silent> <leader><leader>.  :Telescope coc file_code_actions<CR>
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
 
