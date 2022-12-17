@@ -67,5 +67,6 @@
     "default": "\uf29c"
   },
   "suggest.virtualText": true,
-  "suggest.formatItems": ["kind", "abbr", "menu", "shortcut"]
+  "suggest.formatItems": ["kind", "abbr", "menu", "shortcut"],
+  "typescript.preferences.importModuleSpecifier": "relative"
 }
