@@ -24,6 +24,7 @@ let g:coc_global_extensions = [
   \ 'coc-pyright',
   \ 'coc-rust-analyzer',
   \ 'coc-snippets',
+  \ 'coc-go',
 \ ]
 
 function! s:check_back_space() abort

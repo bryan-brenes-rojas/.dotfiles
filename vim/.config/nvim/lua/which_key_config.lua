@@ -71,7 +71,11 @@ wk.register({
   ["<c-space>"] = { 'coc#refresh', 'Refresh coc menu' },
   ["<leader>"] = {
     b = { 'Open buffer list' },
-    c = { 'Toggle cursor lines' },
+    c = {
+      name = "utility",
+      c = { 'Toggle cursor lines' },
+      p = { 'Copy current file name and path to clipboard' },
+    },
     d = {
       name = "+diagnostics",
       p = { 'Go to prev diagnostic' },

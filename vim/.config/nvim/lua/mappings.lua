@@ -1,5 +1,5 @@
 local opts = {noremap = true, silent = true}
-vim.api.nvim_set_keymap('n','<leader>c', ':set cursorcolumn! cursorline!<CR>', opts)
+vim.api.nvim_set_keymap('n','<leader>cc', ':set cursorcolumn! cursorline!<CR>', opts)
 vim.api.nvim_set_keymap('n','<leader>re', ':Telescope registers<CR>', opts)
 vim.api.nvim_set_keymap('n','<leader>te', ':split | terminal<CR> <C-w>J :res 10<CR> i', opts)
 vim.api.nvim_set_keymap('n','<leader>tt', ':FloatermToggle<CR>', opts)
@@ -66,3 +66,12 @@ vim.api.nvim_set_keymap('n', '<leader>qn', ':cnext <CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>qp', ':cprev <CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>qo', ':copen <CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>qc', ':cclose <CR>', opts)
+
+-- Copy file name and path in the clipboard
+vim.api.nvim_set_keymap('n', '<leader>cp', ':let @+=@%<CR>', opts)
+
+-- Move directly to window
+vim.api.nvim_set_keymap('n', '<leader>1', '1<C-w>w<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>2', '2<C-w>w<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>3', '3<C-w>w<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>4', '4<C-w>w<CR>', opts)
