@@ -1,5 +1,5 @@
 local opts = {noremap = true, silent = true}
-vim.api.nvim_set_keymap('n','<leader>cc', ':set cursorcolumn! cursorline!<CR>', opts)
+vim.api.nvim_set_keymap('n','<leader>ct', ':set cursorcolumn! cursorline!<CR>', opts)
 vim.api.nvim_set_keymap('n','<leader>re', ':Telescope registers<CR>', opts)
 vim.api.nvim_set_keymap('n','<leader>te', ':split | terminal<CR> <C-w>J :res 10<CR> i', opts)
 vim.api.nvim_set_keymap('n','<leader>tt', ':FloatermToggle<CR>', opts)
