@@ -32,6 +32,11 @@ vim.api.nvim_set_keymap('n','<leader>w',':set wrap!<CR>',opts)
 -- Copy to end of line
 vim.api.nvim_set_keymap('n','Y','y$',opts)
 
+-- Copy to clipboard 
+vim.api.nvim_set_keymap('v', '<leader>y', '"+y', opts)
+vim.api.nvim_set_keymap('n', '<leader>yy', '"+yy', opts)
+vim.api.nvim_set_keymap('n', '<leader>Y', '"+y$', opts)
+
 -- keep cursor centered
 vim.api.nvim_set_keymap('n','n','nzzzv',opts)
 vim.api.nvim_set_keymap('n','N','Nzzzv',opts)
