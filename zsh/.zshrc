@@ -70,5 +70,5 @@ export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!{node_modules/
 
 export NVM_DIR="$HOME/.nvm"
 # When updating the nvim default version these needs to be updated
-export PATH=~/$NVM_DIR/versions/node/v18.15.0/bin:$PATH
+export PATH=$NVM_DIR/versions/node/v18.15.0/bin:$PATH
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh" --no-use # This loads nvm
