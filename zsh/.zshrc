@@ -1,5 +1,5 @@
 # Path to oh-my-zsh installation.
-export ZSH="/home/bryan/.oh-my-zsh"
+export ZSH="/Users/bryan/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -42,7 +42,7 @@ export PATH=~/bin:$PATH
 export PATH=~/.emacs.d/bin:$PATH
 
 # Add gem to PATH
-export PATH=/home/bryan/.local/share/gem/ruby/3.0.0/bin:$PATH
+export PATH=/Users/bryan/.local/share/gem/ruby/3.0.0/bin:$PATH
 
 # Add go to PATH
 export PATH=$PATH:/usr/local/go/bin
@@ -50,7 +50,7 @@ export PATH=$PATH:/usr/local/go/bin
 export EDITOR='nvim'
 
 # Esto es para utilizar j para brincar a directorios
-[[ -s /home/bryan/.autojump/etc/profile.d/autojump.sh ]] && source /home/bryan/.autojump/etc/profile.d/autojump.sh
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -69,9 +69,6 @@ export KEYTIMEOUT=1
 export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!{node_modules/*,.git/*}'"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
-
+# When updating the nvim default version these needs to be updated
+export PATH=~/$NVM_DIR/versions/node/v18.15.0/bin:$PATH
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh" --no-use # This loads nvm
