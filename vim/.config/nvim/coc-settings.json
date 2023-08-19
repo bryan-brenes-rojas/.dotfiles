@@ -68,5 +68,6 @@
   },
   "suggest.virtualText": true,
   "suggest.formatItems": ["kind", "abbr", "menu", "shortcut"],
-  "typescript.preferences.importModuleSpecifier": "relative"
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "snippets.ultisnips.pythonPrompt": false
 }

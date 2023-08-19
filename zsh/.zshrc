@@ -1,5 +1,5 @@
 # Path to oh-my-zsh installation.
-export ZSH="/Users/bryan/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -42,7 +42,7 @@ export PATH=~/bin:$PATH
 export PATH=~/.emacs.d/bin:$PATH
 
 # Add gem to PATH
-export PATH=/Users/bryan/.local/share/gem/ruby/3.0.0/bin:$PATH
+export PATH=$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH
 
 # Add go to PATH
 export PATH=$PATH:/usr/local/go/bin
@@ -72,3 +72,5 @@ export NVM_DIR="$HOME/.nvm"
 # When updating the nvim default version these needs to be updated
 export PATH=$NVM_DIR/versions/node/v18.15.0/bin:$PATH
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh" --no-use # This loads nvm
+
+export PATH=$HOME/.local/bin:$PATH
