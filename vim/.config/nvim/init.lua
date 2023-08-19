@@ -32,5 +32,8 @@ require('which_key_config')
 -- require('lsp/nvim_lsp_installer_config')
 -- require('lsp/lspconfig_config')
 
+-- harpoon config
+require('harpoon_config')
+
 -- coc configurations
 vim.cmd('source ~/.config/nvim/lua/coc_config.vim')
