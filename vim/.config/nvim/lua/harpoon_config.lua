@@ -11,3 +11,9 @@ vim.api.nvim_set_keymap('n', '<leader>qj', ":lua require'harpoon.ui'.nav_file(1)
 vim.api.nvim_set_keymap('n', '<leader>qk', ":lua require'harpoon.ui'.nav_file(2)<CR>", options)
 vim.api.nvim_set_keymap('n', '<leader>ql', ":lua require'harpoon.ui'.nav_file(3)<CR>", options)
 vim.api.nvim_set_keymap('n', '<leader>q;', ":lua require'harpoon.ui'.nav_file(4)<CR>", options)
+
+require("harpoon").setup({
+  menu = {
+    width = vim.api.nvim_win_get_width(0) - 16,
+  }
+})
