@@ -11,12 +11,12 @@ vim.diagnostic.config({
     source = "always", -- Or "if_many"
   },
 })
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 
 local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<leader>dp', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', '<leader>dn', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<leader>di', vim.diagnostic.open_float, opts)
+vim.keymap.set('n', '<leader>dl', ":lua require'telescope.builtin'.diagnostics()<CR>", opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 
 local on_attach = function(_, bufnr)
@@ -51,6 +51,17 @@ local on_attach = function(_, bufnr)
   end, { desc = 'Format current buffer with LSP' })
 end
 
+vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+  callback = function()
+    vim.lsp.buf.document_highlight()
+  end
+})
+vim.api.nvim_create_autocmd({ "CursorMoved" }, {
+  callback = function()
+    vim.lsp.buf.clear_references()
+  end
+})
+
 local servers = {
   pyright = {},
   tsserver = {},
@@ -63,8 +74,6 @@ local servers = {
   bashls = {},
   emmet_ls = {},
   marksman = {},
-  prettier = {},
-  eslint_lsp = {},
   gopls = {},
 
   lua_ls = {

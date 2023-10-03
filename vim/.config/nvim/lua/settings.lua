@@ -8,6 +8,7 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.scrolloff = 8
 vim.opt.mouse = 'a'
+vim.opt.updatetime = 1500
 -- Also copy to clipboard when yanking text
 -- vim.opt.clipboard:prepend {'unnamedplus'}
 -- vim.cmd('set ttymouse=sgr')
@@ -41,7 +42,7 @@ vim.g.mapleader = " "
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
-    vim.highlight.on_yank{higroup='IncSearch', timeout=300}
+    vim.highlight.on_yank { higroup = 'IncSearch', timeout = 300 }
   end,
   group = highlight_group,
   pattern = '*',
