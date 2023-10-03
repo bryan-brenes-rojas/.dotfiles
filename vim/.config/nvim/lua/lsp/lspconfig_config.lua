@@ -62,9 +62,25 @@ vim.api.nvim_create_autocmd({ "CursorMoved" }, {
   end
 })
 
+local function organize_imports()
+  local params = {
+    command = "_typescript.organizeImports",
+    arguments = { vim.api.nvim_buf_get_name(0) },
+    title = ""
+  }
+  vim.lsp.buf.execute_command(params)
+end
+
 local servers = {
   pyright = {},
-  tsserver = {},
+  tsserver = {
+    commands = {
+      OrganizeImports = {
+        organize_imports,
+        description = "OrganizeImports"
+      }
+    }
+  },
   rust_analyzer = {},
   jsonls = {},
   angularls = {},
@@ -77,10 +93,12 @@ local servers = {
   gopls = {},
 
   lua_ls = {
-    Lua = {
-      workspace = { checkThirdParty = false },
-      telemetry = { enable = false },
-    },
+    settings = {
+      Lua = {
+        workspace = { checkThirdParty = false },
+        telemetry = { enable = false },
+      },
+    }
   },
 }
 
@@ -103,7 +121,8 @@ mason_lspconfig.setup_handlers {
     require('lspconfig')[server_name].setup {
       capabilities = capabilities,
       on_attach = on_attach,
-      settings = servers[server_name],
+      settings = servers[server_name].settings or {},
+      commands = servers[server_name].commands or {},
       filetypes = (servers[server_name] or {}).filetypes,
     }
   end

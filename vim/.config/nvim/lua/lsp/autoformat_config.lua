@@ -50,6 +50,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
           return
         end
 
+        if vim.fn.exists(':OrganizeImports') then
+          vim.cmd('OrganizeImports')
+        end
+
         vim.lsp.buf.format {
           async = false,
           filter = function(c)
