@@ -50,9 +50,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
           return
         end
 
-        if vim.fn.exists(':OrganizeImports') then
-          vim.cmd('OrganizeImports')
-        end
+        -- Fix the issue to wait for the OrganizeImports then format
+        -- because it causes the file to never be saved
+        -- if vim.fn.exists(':OrganizeImports') > 0 then
+        -- vim.cmd('OrganizeImports')
+        -- end
 
         vim.lsp.buf.format {
           async = false,
