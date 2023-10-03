@@ -5,6 +5,8 @@ end
 
 local luasnip = require("luasnip")
 local cmp = require("cmp")
+require('luasnip.loaders.from_vscode').lazy_load()
+luasnip.config.setup {}
 local kind_icons = {
   Class = " ",
   Color = " ",
@@ -40,7 +42,10 @@ cmp.setup({
     end
   },
   mapping = {
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ['<CR>'] = cmp.mapping.confirm({
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true
+    }),
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()

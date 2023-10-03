@@ -48,18 +48,18 @@ endif
 " use <CR> to confirm completion
 inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
 
-nmap <silent> <leader>dp <Plug>(coc-diagnostic-prev)
-nmap <silent> <leader>dn <Plug>(coc-diagnostic-next)
-nnoremap <silent> <leader>di :call CocAction('diagnosticInfo')<CR>
+" nmap <silent> <leader>dp <Plug>(coc-diagnostic-prev)
+" nmap <silent> <leader>dn <Plug>(coc-diagnostic-next)
+" nnoremap <silent> <leader>di :call CocAction('diagnosticInfo')<CR>
 nnoremap <silent> <leader>dl :Telescope coc diagnostics<CR>
 
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
+" nmap <silent> gd <Plug>(coc-definition)
+" nmap <silent> gy <Plug>(coc-type-definition)
+" nmap <silent> gi <Plug>(coc-implementation)
 " nmap <silent> gr <Plug>(coc-references)
-nmap <silent> gr :Telescope coc references<CR>
+" nmap <silent> gr :Telescope coc references<CR>
 
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+" nnoremap <silent> K :call <SID>show_documentation()<CR>
 nnoremap <silent> <leader>o :CocOutline<CR>
 
 function! s:show_documentation()
@@ -72,10 +72,10 @@ endfunction
 
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-nmap <leader>rn <Plug>(coc-rename)
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>fa :Format<CR>
-nmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>rn <Plug>(coc-rename)
+" xmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>fa :Format<CR>
+" nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -86,8 +86,7 @@ augroup mygroup
 augroup end
 
 " Remap keys for applying codeAction to the current buffer.
-" nmap <leader>.  <Plug>(coc-codeaction)
-nmap <silent> <leader>.  :Telescope coc code_actions<CR>
+" nmap <silent> <leader>.  :Telescope coc code_actions<CR>
 nmap <silent> <leader><leader>.  :Telescope coc file_code_actions<CR>
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
@@ -102,7 +101,7 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
 "Explorer
-nmap <silent><space>e :CocCommand explorer<CR>
+" nmap <silent><space>e :CocCommand explorer<CR>
 " Close explorer if it is the last window
 " autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'CocCommand explorer' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif

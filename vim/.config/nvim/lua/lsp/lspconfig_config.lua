@@ -11,105 +11,91 @@ vim.diagnostic.config({
     source = "always", -- Or "if_many"
   },
 })
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 
 local opts = { noremap = true, silent = true }
--- vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '<leader>dp', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', '<leader>dn', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<leader>di', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
-  -- Enable completion triggered by <c-x><c-o>
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-  -- Mappings.
-  -- See `:help vim.lsp.*` for documentation on any of the below functions
-  local bufopts = { noremap = true, silent = true, buffer = bufnr }
-  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-  vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-  -- vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
-  -- vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
-  -- vim.keymap.set('n', '<space>wl', function()
-  -- print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-  -- end, bufopts)
-  vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
-  vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
-  vim.keymap.set('n', '<space>.', vim.lsp.buf.code_action, bufopts)
-  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<space>fa', vim.lsp.buf.formatting, bufopts)
-end
-
-local lsp_flags = {
-  -- This is the default in Nvim 0.7+
-  debounce_text_changes = 150,
-}
-
--- Setup lspconfig.
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-
-local servers = {
-  'pyright',
-  'sumneko_lua',
-  'tsserver',
-  'rust_analyzer',
-  'jsonls',
-  'angularls',
-  'cssls',
-  'html',
-  'sqlls',
-  'solargraph',
-  'bashls',
-  'emmet_ls',
-  'marksman',
-}
-
-for _, server in ipairs(servers) do
-  if (server == 'sumneko_lua') then
-    require('lspconfig')['sumneko_lua'].setup {
-      on_attach = on_attach,
-      flags = lsp_flags,
-      capabilities = capabilities,
-      settings = {
-        Lua = {
-          diagnostics = {
-            globals = { 'vim', 'use' },
-          },
-        },
-      },
-    }
-  elseif (server == 'tsserver') then
-    local function organize_imports()
-      local params = {
-        command = "_typescript.organizeImports",
-        arguments = { vim.api.nvim_buf_get_name(0) },
-        title = ""
-      }
-      vim.lsp.buf.execute_command(params)
+local on_attach = function(_, bufnr)
+  local nmap = function(keys, func, desc)
+    if desc then
+      desc = 'LSP: ' .. desc
     end
 
-    require('lspconfig')['tsserver'].setup {
-      on_attach = on_attach,
-      flags = lsp_flags,
+    vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
+  end
+
+  nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+  nmap('<leader>.', vim.lsp.buf.code_action, 'Code action')
+
+  nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
+  nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+  nmap('gi', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+  nmap('<leader>gy', vim.lsp.buf.type_definition, 'Type [D]efinition')
+  nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+  nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+  nmap('<leader>fa', vim.lsp.buf.format, 'Format current buffer')
+
+  -- See `:help K` for why this keymap
+  nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
+
+  -- Lesser used LSP functionality
+  nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+
+  -- Create a command `:Format` local to the LSP buffer
+  vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
+    vim.lsp.buf.format()
+  end, { desc = 'Format current buffer with LSP' })
+end
+
+local servers = {
+  pyright = {},
+  tsserver = {},
+  rust_analyzer = {},
+  jsonls = {},
+  angularls = {},
+  cssls = {},
+  html = {},
+  sqlls = {},
+  bashls = {},
+  emmet_ls = {},
+  marksman = {},
+  prettier = {},
+  eslint_lsp = {},
+  gopls = {},
+
+  lua_ls = {
+    Lua = {
+      workspace = { checkThirdParty = false },
+      telemetry = { enable = false },
+    },
+  },
+}
+
+-- Setup neovim lua configuration
+require('neodev').setup()
+
+-- nvim-cmp supports additional completion capabilities, so broadcast that to servers
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
+-- Ensure the servers above are installed
+local mason_lspconfig = require 'mason-lspconfig'
+
+mason_lspconfig.setup {
+  ensure_installed = vim.tbl_keys(servers),
+}
+
+mason_lspconfig.setup_handlers {
+  function(server_name)
+    require('lspconfig')[server_name].setup {
       capabilities = capabilities,
-      commands = {
-        OrganizeImports = {
-          organize_imports,
-          description = "Organize Imports"
-        }
-      }
-    }
-  else
-    require('lspconfig')[server].setup {
       on_attach = on_attach,
-      flags = lsp_flags,
-      capabilities = capabilities,
+      settings = servers[server_name],
+      filetypes = (servers[server_name] or {}).filetypes,
     }
   end
-end
+}
