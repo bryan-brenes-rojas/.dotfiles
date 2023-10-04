@@ -62,7 +62,7 @@ return require('lazy').setup({
   },
   'liuchengxu/vim-which-key',
   'rcarriga/nvim-notify',
-  { "lukas-reineke/indent-blankline.nvim", main = "ibl",      opts = {} },
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 
   {
     -- LSP Configuration & Plugins
@@ -74,7 +74,7 @@ return require('lazy').setup({
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
+      { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
@@ -109,5 +109,7 @@ return require('lazy').setup({
   {
     'ThePrimeagen/harpoon',
     dependencies = { { 'nvim-lua/plenary.nvim' } }
-  }
+  },
+
+  'sbdchd/neoformat'
 })

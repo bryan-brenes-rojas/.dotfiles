@@ -27,7 +27,7 @@ require('nvim_cmp_config')
 
 -- native lsp configuration
 require('lsp/lspconfig_config')
-require('lsp/autoformat_config')
+-- require('lsp/autoformat_config')
 
 -- harpoon config
 require('harpoon_config')
