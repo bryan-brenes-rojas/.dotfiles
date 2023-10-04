@@ -1,23 +1,10 @@
-local ls = require('luasnip')
-require("luasnip.loaders.from_vscode").lazy_load()
+local ls = require("luasnip")
 
-function _G.jumpPrev()
-  if ls.jumpable(-1) then
-    ls.jump(-1)
-  end
-end
-
-function _G.jumpNext()
-  if ls.expand_or_jumpable() then
-    ls.expand_or_jump()
-  end
-end
-
--- keymaps for jumping
--- vim.api.nvim_set_keymap('i', '<c-h>', '<Cmd>lua jumpPrev()<CR>', { silent = true })
--- vim.api.nvim_set_keymap('v', '<c-h>', '<Cmd>lua jumpPrev()<CR>', { silent = true })
--- vim.api.nvim_set_keymap('i', '<c-l>', '<Cmd>lua jumpNext()<CR>', { silent = true })
--- vim.api.nvim_set_keymap('v', '<c-l>', '<Cmd>lua jumpNext()<CR>', { silent = true })
+vim.keymap.set({ "i", "s" }, "<C-n>", function()
+	if ls.choice_active() then
+		ls.change_choice(1)
+	end
+end, { silent = true })
 
 local s = ls.snippet
 local sn = ls.snippet_node
@@ -29,5 +16,40 @@ local d = ls.dynamic_node
 local r = ls.restore_node
 
 ls.config.set_config({
-  update_events = "TextChanged,TextChangedI",
+	update_events = "TextChanged,TextChangedI",
 })
+
+local javascriptSnippets = {
+	-- console.log()
+	s("cl", {
+		t("console.log("),
+		i(0, "msg"),
+		t(")"),
+	}),
+	-- describe
+	s("desc", {
+		t("describe('"),
+		i(1, "title"),
+		t({ "', () => {", "  " }),
+		i(2),
+		t({ "", "});" }),
+	}),
+	-- it
+	s("it", {
+		t("it('"),
+		i(1, "title"),
+		t("', "),
+		c(2, {
+			t("async "),
+			t(""),
+		}),
+		t({ "() => {", "  " }),
+		i(3),
+		t({ "", "});" }),
+	}),
+}
+
+ls.add_snippets("typescript", javascriptSnippets)
+ls.add_snippets("javascript", javascriptSnippets)
+ls.add_snippets("typescriptreact", javascriptSnippets)
+ls.add_snippets("javascriptreact", javascriptSnippets)
