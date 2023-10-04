@@ -47,6 +47,12 @@ local javascriptSnippets = {
 		i(3),
 		t({ "", "});" }),
 	}),
+	-- it.todo
+	s("ittodo", {
+		t("it.todo('"),
+		i(1, "title"),
+		t("');"),
+	}),
 }
 
 ls.add_snippets("typescript", javascriptSnippets)
