@@ -1,13 +1,19 @@
 return require("ibl").setup {
-  -- show_current_context = true,
-  -- filetype_exclude = {
-    -- "lspinfo",
-    -- "packer",
-    -- "checkhealth",
-    -- "help",
-    -- "man",
-    -- "",
-    -- "markdown",
-    -- "startify",
-  -- }
+  scope = { enabled = false },
+  exclude = {
+    filetypes = {
+      "lspinfo",
+      "checkhealth",
+      "man",
+      "",
+      "markdown",
+      "startify",
+      "lspinfo",
+      "packer",
+      "help",
+      "gitcommit",
+      "TelescopePrompt",
+      "TelescopeResults",
+    }
+  }
 }
