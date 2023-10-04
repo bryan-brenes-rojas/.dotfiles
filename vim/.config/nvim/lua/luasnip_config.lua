@@ -31,7 +31,7 @@ local javascriptSnippets = {
 		t("describe('"),
 		i(1, "title"),
 		t({ "', () => {", "  " }),
-		i(2),
+		i(0),
 		t({ "", "});" }),
 	}),
 	-- it
@@ -44,13 +44,13 @@ local javascriptSnippets = {
 			t(""),
 		}),
 		t({ "() => {", "  " }),
-		i(3),
+		i(0),
 		t({ "", "});" }),
 	}),
 	-- it.todo
 	s("ittodo", {
 		t("it.todo('"),
-		i(1, "title"),
+		i(0, "title"),
 		t("');"),
 	}),
 }
