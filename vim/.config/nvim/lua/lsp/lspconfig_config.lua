@@ -51,15 +51,23 @@ local on_attach = function(_, bufnr)
   end, { desc = 'Format current buffer with LSP' })
 end
 
-vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-  callback = function()
-    vim.lsp.buf.document_highlight()
-  end
-})
-vim.api.nvim_create_autocmd({ "CursorMoved" }, {
-  callback = function()
-    vim.lsp.buf.clear_references()
-  end
+
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client.server_capabilities.documentHighlightProvider ~= nil then
+      vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+        callback = function()
+          vim.lsp.buf.document_highlight()
+        end
+      })
+    end
+    vim.api.nvim_create_autocmd({ "CursorMoved" }, {
+      callback = function()
+        vim.lsp.buf.clear_references()
+      end
+    })
+  end,
 })
 
 local function organize_imports()
