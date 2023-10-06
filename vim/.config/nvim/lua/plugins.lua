@@ -113,4 +113,5 @@ return require("lazy").setup({
 	-- 'sbdchd/neoformat'
 	"stevearc/conform.nvim",
 	"mfussenegger/nvim-lint",
+	"stevearc/dressing.nvim",
 })

@@ -36,3 +36,6 @@ require("formatting_config")
 
 --- linting
 require("linting_config")
+
+-- notify
+require("notify_config")
