@@ -37,7 +37,6 @@ local on_attach = function(_, bufnr)
 	nmap("<leader>gy", vim.lsp.buf.type_definition, "Type [D]efinition")
 	nmap("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
 	nmap("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
-	nmap("<leader>fa", "<cmd>Neoformat<CR>", "Format current buffer")
 
 	-- See `:help K` for why this keymap
 	nmap("K", vim.lsp.buf.hover, "Hover Documentation")
@@ -120,6 +119,8 @@ capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 -- Ensure the servers above are installed
 local mason_lspconfig = require("mason-lspconfig")
 
+local mason_tool_installer = require("mason-tool-installer")
+
 mason_lspconfig.setup({
 	ensure_installed = vim.tbl_keys(servers),
 })
@@ -136,8 +137,14 @@ mason_lspconfig.setup_handlers({
 	end,
 })
 
-vim.api.nvim_create_autocmd("BufWritePre", {
-	callback = function()
-		vim.cmd("Neoformat")
-	end,
+mason_tool_installer.setup({
+	ensure_installed = {
+		"prettier", -- prettier formatter
+		"stylua", -- lua formatter
+		"isort", -- python formatter
+		"black", -- python formatter
+		"pylint", -- python linter
+		"eslint_d", -- js linter
+		"clang-format", -- c/cpp
+	},
 })
