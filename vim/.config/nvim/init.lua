@@ -39,3 +39,6 @@ require("linting_config")
 
 -- notify
 require("notify_config")
+
+-- dressing
+require("dressing_config")
