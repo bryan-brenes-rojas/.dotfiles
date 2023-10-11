@@ -128,6 +128,7 @@ wk.register({
 		r = {
 			e = { "Open registers list" },
 			n = { "Rename (lsp)" },
+			r = { "Toggle relative numbers" },
 		},
 		s = { "Open fuzzy search (live_grep)" },
 		t = {

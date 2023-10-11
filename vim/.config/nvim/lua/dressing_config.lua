@@ -3,7 +3,7 @@ require("dressing").setup({
 		relative = "editor",
 		prefer_width = 0.5,
 		win_options = {
-			winblend = 100,
+			winblend = 0,
 			winhighlight = "FloatBorder:Title",
 		},
 	},
