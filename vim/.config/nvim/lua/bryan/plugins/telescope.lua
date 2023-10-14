@@ -8,6 +8,7 @@ return {
 		vim.api.nvim_set_keymap("n", "<leader>b", ":lua require'telescope.builtin'.buffers()<CR>", options)
 		vim.api.nvim_set_keymap("n", "<leader>s", ":lua require'telescope.builtin'.live_grep()<CR>", options)
 		vim.api.nvim_set_keymap("n", "<leader>gg", ":lua require'telescope.builtin'.git_files()<CR>", options)
+		vim.api.nvim_set_keymap("n", "<leader>re", ":Telescope registers<CR>", options)
 
 		local actions = require("telescope.actions")
 

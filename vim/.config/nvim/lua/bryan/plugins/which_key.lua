@@ -146,7 +146,9 @@ return {
 					v = { "Visit test" },
 				},
 				v = { "Split vertically" },
-				w = { "Toggle word wrap" },
+				w = {
+					t = { "Toggle word wrap" },
+				},
 				["."] = { "Display code actions" },
 				["]"] = {
 					h = { "go to next git hunk" },
