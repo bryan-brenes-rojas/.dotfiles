@@ -1,5 +1,6 @@
 return {
 	"scrooloose/nerdcommenter",
+	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		vim.api.nvim_set_keymap("n", "++", "<plug>NERDCommenterToggle", {})
 		vim.api.nvim_set_keymap("v", "++", "<plug>NERDCommenterToggle", {})

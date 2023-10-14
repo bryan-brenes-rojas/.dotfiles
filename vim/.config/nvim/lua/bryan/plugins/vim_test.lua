@@ -1,5 +1,6 @@
 return {
 	"vim-test/vim-test",
+	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		local opts = { silent = true, noremap = true }
 		vim.api.nvim_set_keymap("n", "<leader>tn", ":TestNearest<CR>", opts)
