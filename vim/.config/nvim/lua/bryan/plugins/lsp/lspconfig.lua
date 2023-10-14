@@ -19,6 +19,11 @@ return {
 			},
 		})
 
+		vim.cmd("sign define DiagnosticSignError text= texthl=DiagnosticSignError linehl= numhl=")
+		vim.cmd("sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarn linehl= numhl=")
+		vim.cmd("sign define DiagnosticSignInfo text= texthl=DiagnosticSignInfo linehl= numhl=")
+		vim.cmd("sign define DiagnosticSignHint text= texthl=DiagnosticSignHint linehl= numhl=")
+
 		local opts = { noremap = true, silent = true }
 		vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev, opts)
 		vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, opts)
