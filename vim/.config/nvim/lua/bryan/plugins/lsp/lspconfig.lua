@@ -153,6 +153,7 @@ return {
 				"pylint", -- python linter
 				"eslint_d", -- js linter
 				"clang-format", -- c/cpp
+				"cspell",
 			},
 		})
 	end,
