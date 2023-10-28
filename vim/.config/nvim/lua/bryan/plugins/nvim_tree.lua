@@ -19,6 +19,7 @@ return {
 			vim.keymap.set("n", "h", api.node.navigate.parent_close, opts("Close parent"))
 			vim.keymap.set("n", "E", api.node.open.vertical, opts("Open: vertical"))
 			vim.keymap.set("n", "s", api.node.open.horizontal, opts("Open: horizontal"))
+			vim.keymap.set("n", "<C-t>", "<cmd>ToggleTerm<CR>", opts("Toggle Terminal"))
 		end
 
 		require("nvim-tree").setup({
