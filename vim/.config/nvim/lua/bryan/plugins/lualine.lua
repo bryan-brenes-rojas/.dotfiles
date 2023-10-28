@@ -11,10 +11,18 @@ return {
 			},
 		}
 
+		-- These lines are to be able to override the c section and use the same
+		-- color as the bg. Remove when other themes are used (also use 'auto' as
+		-- theme for lualine)
+		local catppuccin_theme = require("catppuccin.utils.lualine")("frappe")
+		local catppuccin_colors = require("catppuccin.palettes").get_palette("frappe")
+		catppuccin_theme.normal.c = { bg = catppuccin_colors.base, fg = catppuccin_colors.text }
+		catppuccin_theme.inactive.c = { bg = catppuccin_colors.base, fg = catppuccin_colors.overlay0 }
+
 		require("lualine").setup({
 			options = {
 				icons_enabled = true,
-				theme = "auto",
+				theme = catppuccin_theme, -- auto for automatically picking up theme
 				-- component_separators = { left = "", right = "" },
 				-- section_separators = { left = "", right = "" },
 				section_separators = { left = "", right = "" },
