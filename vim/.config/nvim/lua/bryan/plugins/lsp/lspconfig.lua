@@ -108,6 +108,7 @@ return {
 			marksman = {},
 			gopls = {},
 			clangd = {},
+			omnisharp_mono = {},
 
 			lua_ls = {
 				settings = {
