@@ -87,7 +87,11 @@ return {
 					i = { "Open diangnostic inline info" },
 					l = { "List all diagnostics" },
 				},
-				e = { "Open explorer" },
+				e = {
+					name = "explorer",
+					t = { "Toggle the file explorer" },
+					f = { "Focus current file in the explorer" },
+				},
 				f = {
 					name = "+format",
 					a = { "Format all file" },

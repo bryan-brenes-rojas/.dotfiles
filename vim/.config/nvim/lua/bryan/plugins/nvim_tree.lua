@@ -54,7 +54,7 @@ return {
 				auto_open = true,
 			},
 			update_focused_file = {
-				enable = true,
+				enable = false,
 				update_cwd = false,
 				ignore_list = {},
 			},
@@ -120,7 +120,7 @@ return {
 
 		local opts = { noremap = true, silent = true }
 
-		vim.api.nvim_set_keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
-		-- vim.cmd("autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif")
+		vim.api.nvim_set_keymap("n", "<leader>et", ":NvimTreeToggle<CR>", opts)
+		vim.api.nvim_set_keymap("n", "<leader>ef", ":NvimTreeFindFile<CR>", opts)
 	end,
 }
