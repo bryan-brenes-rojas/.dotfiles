@@ -3,14 +3,17 @@ return {
 	dependencies = {
 		"L3MON4D3/LuaSnip",
 		"saadparwaiz1/cmp_luasnip",
-		"hrsh7th/cmp-nvim-lsp",
+
 		"rafamadriz/friendly-snippets",
+
+		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/nvim-cmp",
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-nvim-lua",
 		"hrsh7th/cmp-nvim-lsp",
-		"saadparwaiz1/cmp_luasnip",
+		"neovim/nvim-lspconfig",
+		"hrsh7th/cmp-cmdline",
 	},
 	config = function()
 		local has_words_before = function()
@@ -56,7 +59,11 @@ return {
 					require("luasnip").lsp_expand(args.body)
 				end,
 			},
-			mapping = {
+			window = {
+				completion = cmp.config.window.bordered(),
+				documentation = cmp.config.window.bordered(),
+			},
+			mapping = cmp.mapping.preset.insert({
 				["<CR>"] = cmp.mapping.confirm({
 					behavior = cmp.ConfirmBehavior.Replace,
 					select = true,
@@ -83,7 +90,6 @@ return {
 						fallback()
 					end
 				end, { "i", "s" }),
-
 				["<S-Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.select_prev_item()
@@ -102,14 +108,14 @@ return {
 						fallback()
 					end
 				end, { "i", "s" }),
-			},
-			sources = {
+			}),
+			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "buffer" },
 				{ name = "path" },
 				{ name = "nvim_lua" },
-			},
+			}),
 			formatting = {
 				format = function(entry, vim_item)
 					-- Kind icons

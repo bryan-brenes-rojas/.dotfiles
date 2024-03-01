@@ -13,7 +13,7 @@ return {
 		})
 		vim.api.nvim_set_keymap(
 			"n",
-			"<leader>ss",
+			"<leader>S",
 			"<cmd>lua require('spectre').toggle()<CR>",
 			{ silent = true, noremap = true, desc = "Open Search and replace" }
 		)
