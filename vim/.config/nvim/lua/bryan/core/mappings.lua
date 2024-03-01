@@ -79,3 +79,11 @@ vim.api.nvim_set_keymap("n", "<leader>4", "4<C-w>w<CR>", opts)
 
 -- Toggle relative numbers
 vim.api.nvim_set_keymap("n", "<leader>rr", ":set relativenumber!<CR>", opts)
+
+-- Open links
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>gx",
+	"<cmd>silent !open <cWORD><cr>",
+	{ noremap = true, silent = true, desc = "Open link under cursor" }
+)
