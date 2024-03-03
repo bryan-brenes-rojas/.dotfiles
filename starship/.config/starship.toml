@@ -22,6 +22,7 @@ disabled = true
 [time]
 disabled = false
 format = "[$time]($style) "
+time_format = "%R"
 
 [nodejs]
 format = "[$symbol($version )]($style)"
