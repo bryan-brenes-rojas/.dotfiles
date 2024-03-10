@@ -22,7 +22,8 @@ return {
 		require("lualine").setup({
 			options = {
 				icons_enabled = true,
-				theme = catppuccin_theme, -- auto for automatically picking up theme
+				-- theme = catppuccin_theme, -- auto for automatically picking up theme
+				theme = "auto",
 				-- component_separators = { left = "", right = "" },
 				-- section_separators = { left = "", right = "" },
 				section_separators = { left = "", right = "" },
