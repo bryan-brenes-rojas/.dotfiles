@@ -55,7 +55,7 @@ return {
 		vim.api.nvim_set_keymap(
 			"n",
 			"<leader>tw",
-			"<cmd>lua require('neotest').watch.toggl3()<CR>",
+			"<cmd>lua require('neotest').watch.toggle()<CR>",
 			{ silent = true, noremap = true, desc = "Toggle watch test" }
 		)
 	end,
