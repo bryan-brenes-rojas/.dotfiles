@@ -15,10 +15,7 @@ return {
 	config = function()
 		require("neotest").setup({
 			adapters = {
-				require("neotest-jest")({
-					jestCommand = require("neotest-jest.jest-util").getJestCommand(vim.fn.expand("%:p:h"))
-						.. " --watch",
-				}),
+				require("neotest-jest"),
 				require("neotest-vitest"),
 				require("neotest-rspec"),
 				require("neotest-gtest").setup({}),
