@@ -1,4 +1,5 @@
 return {
+	enabled = false,
 	"vim-test/vim-test",
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()

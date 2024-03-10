@@ -3,7 +3,7 @@
 
 # Inserts a blank line between shell prompts
 add_newline = false
-right_format = "$nodejs $time"
+right_format = "$package $rust $nodejs $time"
 
 # Replace the '❯' symbol in the prompt with '➜'
 [character] # The name of the module we are configuring is 'character'
@@ -20,7 +20,7 @@ vimcmd_visual_symbol = "[❪](bold yellow)"
 disabled = true
 
 [time]
-disabled = false
+disabled = true
 format = "[$time]($style) "
 time_format = "%R"
 
@@ -42,3 +42,15 @@ untracked = "?${count}"
 
 [git_branch]
 format = "[$symbol$branch(:$remote_branch)]($style) "
+
+[rust]
+disabled = false
+format = "[$symbol($version )]($style)"
+
+[package]
+disabled = false
+format = "[$symbol$version]($style) "
+
+[lua]
+disabled = false
+format = "[$symbol($version )]($style)"
