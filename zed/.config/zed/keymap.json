@@ -19,6 +19,9 @@
       "space d i": "editor::GoToDiagnostic",
       "space d l": "diagnostics::Deploy",
       "space f a": "editor::Format",
+      "space b": "tab_switcher::Toggle",
+      "space v": "pane::SplitRight",
+      "space h": "pane::SplitDown",
       "ctrl-t": "terminal_panel::ToggleFocus",
       "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
       "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
@@ -33,7 +36,9 @@
   {
     "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
     "bindings": {
-      "+ +": "editor::ToggleComments"
+      "+ +": "editor::ToggleComments",
+      "shift-j": "editor::MoveLineDown",
+      "shift-k": "editor::MoveLineUp"
     }
   },
   {
