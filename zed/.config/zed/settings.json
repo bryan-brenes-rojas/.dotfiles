@@ -1,60 +1,24 @@
-[
-  {
-    "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
-    "bindings": {
-      // put key-bindings here if you want them to work in normal & visual mode
+{
+  "theme": "One Dark",
+  "vim_mode": true,
+  "relative_line_numbers": true,
+  "buffer_line_height": {
+    "custom": 1.5
+  },
+  "cursor_blink": false,
+  "languages": {
+    "TypeScript": {
+      "code_actions_on_format": {
+        "source.organizeImports": true
+      }
+    },
+    "TSX": {
+      "code_actions_on_format": {
+        "source.organizeImports": true
+      }
     }
   },
-  {
-    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
-    "bindings": {
-      "space r n": "editor::Rename",
-      "space e f": "pane::RevealInProjectPanel",
-      "space e t": "workspace::ToggleLeftDock",
-      "space p": "file_finder::Toggle",
-      "space s": "pane::DeploySearch",
-      "space w o": "outline::Toggle",
-      "space c p": "editor::CopyRelativePath",
-      "shift-k": "editor::Hover",
-      "space d i": "editor::GoToDiagnostic",
-      "space d l": "diagnostics::Deploy",
-      "space f a": "editor::Format",
-      "ctrl-t": "terminal_panel::ToggleFocus",
-      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
-      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-      "+ +": "editor::ToggleComments",
-      "g r": "editor::FindAllReferences",
-      "z a": "editor::Fold",
-      "z r": "editor::UnfoldLines"
-    }
-  },
-  {
-    "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
-    "bindings": {
-      "+ +": "editor::ToggleComments"
-    }
-  },
-  {
-    "context": "Editor && vim_mode == insert && !menu",
-    "bindings": {
-      // put key-bindings here if you want them to work in insert mode
-    }
-  },
-  {
-    "context": "ProjectPanel",
-    "bindings": {
-      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-      "l": "project_panel::Open",
-      "space e t": "workspace::ToggleLeftDock",
-      "a": "project_panel::NewFile"
-    }
-  },
-  {
-    "context": "Terminal",
-    "bindings": {
-      "ctrl-t": "terminal_panel::ToggleFocus"
-    }
+  "terminal": {
+    "copy_on_select": true
   }
-]
+}
