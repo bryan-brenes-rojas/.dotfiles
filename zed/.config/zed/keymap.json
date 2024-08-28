@@ -51,9 +51,8 @@
     "context": "ProjectPanel",
     "bindings": {
       "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-      "l": "project_panel::Open",
       "space e t": "workspace::ToggleLeftDock",
-      "a": "project_panel::NewFile"
+      "ctrl-t": "terminal_panel::ToggleFocus"
     }
   },
   {

@@ -2,10 +2,19 @@
   "theme": "One Dark",
   "vim_mode": true,
   "relative_line_numbers": true,
+  "tab_size": 2,
   "buffer_line_height": {
     "custom": 1.5
   },
   "cursor_blink": false,
+  "use_autoclose": false,
+  "format_on_save": "on",
+  "show_wrap_guides": true,
+  "wrap_guides": [80],
+  "project_panel": {
+    "auto_fold_dirs": false,
+    "auto_reveal_entries": false
+  },
   "languages": {
     "TypeScript": {
       "code_actions_on_format": {
