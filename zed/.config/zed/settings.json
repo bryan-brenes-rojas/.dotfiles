@@ -1,4 +1,11 @@
 {
+  "assistant": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-20240620"
+    },
+    "version": "2"
+  },
   "theme": "One Dark",
   "vim_mode": true,
   "relative_line_numbers": true,
@@ -23,7 +30,8 @@
     "quick_actions": false
   },
   "tabs": {
-    "git_status": true
+    "git_status": true,
+    "file_icons": true
   },
   "vim": {
     "use_system_clipboard": "on_yank"
