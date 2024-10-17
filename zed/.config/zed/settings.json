@@ -46,6 +46,11 @@
       "code_actions_on_format": {
         "source.organizeImports": true
       }
+    },
+    "Python": {
+      "tab_size": 4,
+      "language_servers": ["ruff"],
+      "format_on_save": "on"
     }
   },
   "terminal": {
