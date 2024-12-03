@@ -1,8 +1,6 @@
 return {
   "akinsho/bufferline.nvim",
-  opts = {
-    options = {
-      mode = "tabs",
-    },
-  },
+  opts = function(_, opts)
+    opts.options.mode = "tabs"
+  end,
 }
