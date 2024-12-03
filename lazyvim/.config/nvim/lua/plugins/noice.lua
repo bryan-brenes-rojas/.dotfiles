@@ -1,12 +1,10 @@
 return {
   "folke/noice.nvim",
-  opts = {
-    lsp = {
-      signature = {
-        auto_open = {
-          enabled = false,
-        },
+  opts = function(_, opts)
+    opts.lsp.signature = {
+      auto_open = {
+        enabled = false,
       },
-    },
-  },
+    }
+  end,
 }
