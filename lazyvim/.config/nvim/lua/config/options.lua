@@ -3,3 +3,4 @@
 -- Add any additional options here
 
 vim.wo.colorcolumn = "81"
+vim.opt.clipboard = ""
