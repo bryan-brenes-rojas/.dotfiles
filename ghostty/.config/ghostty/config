@@ -1,0 +1,5 @@
+theme = catppuccin-frappe
+adjust-cell-height = 50%
+mouse-hide-while-typing = true
+macos-titlebar-proxy-icon = hidden
+title = " "
