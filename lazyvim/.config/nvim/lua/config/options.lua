@@ -7,3 +7,4 @@ vim.wo.colorcolumn = "81"
 vim.opt.clipboard = ""
 -- Do not change the cwd, for example, when in a monorepo
 vim.g.root_spec = { "cwd" }
+vim.opt.swapfile = false
