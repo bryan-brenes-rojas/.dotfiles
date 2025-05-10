@@ -24,7 +24,10 @@
       "space f b": "tab_switcher::ToggleAll",
       "space h": "pane::SplitDown",
       "space g o": "git_panel::ToggleFocus",
-      "space g g": ["task::Spawn", { "task_name": "Open lazygit" }],
+      "space g g": [
+        "task::Spawn",
+        { "task_name": "Open lazygit", "reveal_target": "center" }
+      ],
       "space g h p": "editor::ToggleHunkDiff",
       "space g r": "editor::RevertSelectedHunks",
       "space g R": "editor::RevertFile",
