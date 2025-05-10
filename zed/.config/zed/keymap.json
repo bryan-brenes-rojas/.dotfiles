@@ -8,8 +8,8 @@
   {
     "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
     "bindings": {
+      "space e": "project_panel::ToggleFocus",
       "space g e": "pane::RevealInProjectPanel",
-      "space e": "workspace::ToggleLeftDock",
       "space space": "file_finder::Toggle",
       "space /": "pane::DeploySearch",
       "space w o": "outline::Toggle",
@@ -60,6 +60,16 @@
     }
   },
   {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "r": "project_panel::Rename",
+      "a": "project_panel::NewFile",
+      "d": "project_panel::Delete",
+      "c": "project_panel::Copy",
+      "p": "project_panel::Paste"
+    }
+  },
+  {
     "context": "Terminal",
     "bindings": {
       "ctrl-/": "terminal_panel::ToggleFocus"
@@ -92,6 +102,8 @@
       "u": "git::UnstageAll",
       "r": ["git::RestoreFile", { "skip_prompt": false }],
       "q": "git_panel::Close",
+      "p": "git::Pull",
+      "P": "git::Push",
       "ctrl-l": "workspace::ActivatePaneRight"
     }
   }
