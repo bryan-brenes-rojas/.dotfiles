@@ -8,37 +8,39 @@
   {
     "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
     "bindings": {
-      "space r n": "editor::Rename",
-      "space e f": "pane::RevealInProjectPanel",
-      "space e t": "workspace::ToggleLeftDock",
-      "space p": "file_finder::Toggle",
-      "space s": "pane::DeploySearch",
+      "space g e": "pane::RevealInProjectPanel",
+      "space e": "workspace::ToggleLeftDock",
+      "space space": "file_finder::Toggle",
+      "space /": "pane::DeploySearch",
       "space w o": "outline::Toggle",
-      "space c p": "editor::CopyRelativePath",
       "shift-k": "editor::Hover",
       "space d i": "editor::GoToDiagnostic",
-      "space d l": "diagnostics::Deploy",
-      "space f a": "editor::Format",
-      "space b": "tab_switcher::Toggle",
-      "space v": "pane::SplitRight",
+      "space c a": "editor::ToggleCodeActions",
+      "space c d": "diagnostics::Deploy",
+      "space c f": "editor::Format",
+      "space c r": "editor::Rename",
+      "space c v": "workspace::CopyRelativePath",
+      "space f b": "tab_switcher::ToggleAll",
       "space h": "pane::SplitDown",
-      "space g h": "editor::ToggleHunkDiff",
+      "space g g": "git_panel::ToggleFocus",
+      "space g h p": "editor::ToggleHunkDiff",
       "space g r": "editor::RevertSelectedHunks",
       "space g R": "editor::RevertFile",
-      "space w t": "editor::ToggleSoftWrap",
-      "ctrl-t": "terminal_panel::ToggleFocus",
-      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
-      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-      "+ +": "editor::ToggleComments",
+      "space |": "pane::SplitRight",
+      "space u w": "editor::ToggleSoftWrap",
+      "ctrl-/": "terminal_panel::ToggleFocus",
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "g c c": "editor::ToggleComments",
       "g r": "editor::FindAllReferences"
     }
   },
   {
     "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
     "bindings": {
-      "+ +": "editor::ToggleComments",
+      "g c c": "editor::ToggleComments",
       "shift-j": "editor::MoveLineDown",
       "shift-k": "editor::MoveLineUp"
     }
@@ -52,15 +54,45 @@
   {
     "context": "ProjectPanel",
     "bindings": {
-      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-      "space e t": "workspace::ToggleLeftDock",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "space e": "workspace::ToggleLeftDock",
       "ctrl-t": "terminal_panel::ToggleFocus"
     }
   },
   {
     "context": "Terminal",
     "bindings": {
-      "ctrl-t": "terminal_panel::ToggleFocus"
+      "ctrl-/": "terminal_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "FileFinder || (FileFinder > Picker > Editor) || (FileFinder > Picker > menu)",
+    "use_key_equivalents": true,
+    "bindings": {
+      "ctrl-v": "pane::SplitRight"
+    }
+  },
+  {
+    "context": "GitPanel && ChangesList",
+    "use_key_equivalents": true,
+    "bindings": {
+      "k": "menu::SelectPrevious",
+      "j": "menu::SelectNext",
+      "g g": "menu::SelectFirst",
+      "G": "menu::SelectLast",
+      "enter": "menu::Confirm",
+      "s": "git::ToggleStaged",
+      "alt-down": "git_panel::FocusEditor",
+      "tab": "git_panel::FocusEditor",
+      "escape": "git_panel::ToggleFocus",
+      "cmd-enter": "git::Commit",
+      "c": "git::Commit",
+      "A": "git::Amend",
+      "a": "git::StageAll",
+      "u": "git::UnstageAll",
+      "r": ["git::RestoreFile", { "skip_prompt": false }],
+      "q": "git_panel::Close",
+      "ctrl-l": "workspace::ActivatePaneRight"
     }
   }
 ]
