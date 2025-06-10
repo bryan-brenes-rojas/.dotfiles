@@ -60,13 +60,6 @@
     }
   },
   {
-    "context": "Workspace",
-    "bindings": {
-      "space space": "file_finder::Toggle",
-      "space e": "project_panel::ToggleFocus"
-    }
-  },
-  {
     "context": "ProjectPanel",
     "bindings": {
       "ctrl-l": "workspace::ActivatePaneRight",
