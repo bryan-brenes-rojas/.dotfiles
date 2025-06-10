@@ -28,10 +28,13 @@
         "task::Spawn",
         { "task_name": "Open lazygit", "reveal_target": "center" }
       ],
-      "space g h p": "editor::ToggleHunkDiff",
-      "space g r": "editor::RevertSelectedHunks",
-      "space g R": "editor::RevertFile",
-      "space |": "pane::SplitRight",
+      "space g h p": "editor::ToggleSelectedDiffHunks",
+      "space g r": "git::Restore",
+      "space g R": "git::RestoreFile",
+      "space |": [
+        "workspace::MoveItemToPaneInDirection",
+        { "direction": "right" }
+      ],
       "space u w": "editor::ToggleSoftWrap",
       "ctrl-/": "terminal_panel::ToggleFocus",
       "ctrl-h": "workspace::ActivatePaneLeft",
@@ -57,6 +60,13 @@
     }
   },
   {
+    "context": "Workspace",
+    "bindings": {
+      "space space": "file_finder::Toggle",
+      "space e": "project_panel::ToggleFocus"
+    }
+  },
+  {
     "context": "ProjectPanel",
     "bindings": {
       "ctrl-l": "workspace::ActivatePaneRight",
@@ -77,7 +87,7 @@
   {
     "context": "Terminal",
     "bindings": {
-      "ctrl-/": "terminal_panel::ToggleFocus"
+      "ctrl-/": "workspace::ToggleBottomDock"
     }
   },
   {

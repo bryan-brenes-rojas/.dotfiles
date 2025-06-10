@@ -49,11 +49,12 @@
     },
     "Python": {
       "tab_size": 4,
-      "language_servers": ["ruff"],
+      "language_servers": ["ruff", "..."],
       "format_on_save": "on"
     }
   },
   "terminal": {
-    "copy_on_select": true
+    "copy_on_select": true,
+    "font_family": "JetBrainsMono Nerd Font"
   }
 }
