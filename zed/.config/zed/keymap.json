@@ -74,7 +74,8 @@
       "a": "project_panel::NewFile",
       "d": "project_panel::Delete",
       "c": "project_panel::Copy",
-      "p": "project_panel::Paste"
+      "p": "project_panel::Paste",
+      "s": null
     }
   },
   {
@@ -113,6 +114,13 @@
       "p": "git::Pull",
       "P": "git::Push",
       "ctrl-l": "workspace::ActivatePaneRight"
+    }
+  },
+  {
+    "context": "Editor && showing_completions",
+    "use_key_equivalents": true,
+    "bindings": {
+      "ctrl-y": "editor::ConfirmCompletion"
     }
   }
 ]
