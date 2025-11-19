@@ -2,13 +2,12 @@
   "agent": {
     "default_model": {
       "provider": "copilot_chat",
-      "model": "gpt-4"
-    },
-    "version": "2"
+      "model": "gpt-4.1"
+    }
   },
   "theme": "One Dark",
   "vim_mode": true,
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "tab_bar": {
     "show_nav_history_buttons": false
   },
